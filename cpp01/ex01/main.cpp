@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 14:22:24 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/02 17:56:39 by cjad             ###   ########.fr       */
+/*   Created: 2022/06/02 15:02:50 by cjad              #+#    #+#             */
+/*   Updated: 2022/06/02 18:18:00 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
-#include <iostream>
-#include <string>
-#include <new>
+#include "Zombie.hpp"
 
-class Zombie
+int	main()
 {
-public:
-	void announce( void );
-	Zombie(std::string name);
-	~Zombie();
-private:
-	std::string name;
-};
-
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
-
-#endif
+	Zombie *zombie = zombieHorde(10, "yal3ab");
+	int i = 0;
+	while (i < 10)
+	{
+		zombie[i].announce();
+		i++;
+	}
+	delete [] zombie;
+}

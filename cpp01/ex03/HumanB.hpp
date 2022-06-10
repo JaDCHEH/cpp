@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:13:02 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/02 20:15:17 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/06 10:56:13 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 class HumanB
 {
 public:
-	Weapon weapon;
-	std::string name;
+	Weapon *weapon;
+	std::string const &name;
 	void setWeapon (Weapon &weapon);
 	void attack (void);
-	HumanB(std::string name);
+	HumanB(std::string const &name);
 	~HumanB();
 };
 

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:07:31 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/02 20:23:31 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/06 10:56:30 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class HumanA
 {
 public:
-	Weapon weapon;
+	Weapon &weapon;
 	std::string name;
 	void attack (void);
-	HumanA(std::string name, Weapon &weapon);
+	HumanA(std::string const &name, Weapon &weapon);
 	~HumanA();
 };
 

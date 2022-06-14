@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:04:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 12:05:56 by cjad             ###   ########.fr       */
+/*   Created: 2022/06/13 12:58:39 by cjad              #+#    #+#             */
+/*   Updated: 2022/06/14 15:51:40 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int main()
 {
-public:
-	ScavTrap(std::string name);
-	void guardGate();
-	~ScavTrap();
-};
+	DiamondTrap Diam("Garen");
 
-#endif
+	Diam.attack("Darius");
+	Diam.whoiam();
+}

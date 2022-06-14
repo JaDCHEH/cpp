@@ -6,16 +6,16 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:12:23 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 11:42:37 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/14 15:55:33 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap(std::string &name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap " << this->name << " constructor Called" << std::endl;
+	std::cout << "ScavTrap Constructor Called" << std::endl;
 	this->ad = 20;
 	this->energy = 50;
 	this->hitpoint = 100;

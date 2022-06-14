@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:07:58 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 15:55:16 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/14 15:50:10 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,29 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "FragTrap Constructor called" << std::endl;
+	std::cout << "FragTrap constructor Called" << std::endl;
 	this->ad = 30;
 	this->energy = 100;
 	this->hitpoint = 100;
 }
 
+FragTrap::FragTrap()
+{
+	std::cout << "FragTrap constructor Called" << std::endl;
+	this->name = "Unnamed";
+	this->ad = 30;
+	this->energy = 100;
+	this->hitpoint = 100;
+}
+
+void FragTrap::attack(const std::string& target)
+{
+	std::cout << "FragTrap " << this->name << " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl; 
+}
+
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << this->name << " requests 10 high fives" << std::endl;
+	
 }
 
 FragTrap::~FragTrap()

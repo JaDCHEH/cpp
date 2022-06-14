@@ -6,19 +6,19 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:19:21 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/13 13:03:07 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/14 15:56:20 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string &name)
+ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
 	this->ad = 0;
 	this->energy = 10;
 	this->hitpoint = 10;
-	std::cout << "Constructor for " << this->name << " called" << std::endl;
+	std::cout << "ClapTrap Constructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -40,5 +40,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Desstructor for " << this->name << " called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }

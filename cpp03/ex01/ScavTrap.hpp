@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:04:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/13 15:59:01 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/14 12:03:26 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 class ScavTrap : public ClapTrap
 {
 public:
-	ScavTrap(std::string &name);
+	ScavTrap(std::string name);
+	void attack(const std::string &target);
 	void guardGate();
 	~ScavTrap();
 };

@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:04:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 12:05:56 by cjad             ###   ########.fr       */
+/*   Created: 2022/06/13 16:18:50 by cjad              #+#    #+#             */
+/*   Updated: 2022/06/14 15:31:09 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
+protected:
+	const static unsigned int initialhitpoint = 100;
+	const static unsigned int initialenergy = 100;
+	const static unsigned int initialad = 30;
 public:
-	ScavTrap(std::string name);
-	void guardGate();
-	~ScavTrap();
+	FragTrap(std::string name);
+	FragTrap();
+	void highFivesGuys(void);
+	void attack(const std::string &target);
+	~FragTrap();
 };
 
 #endif

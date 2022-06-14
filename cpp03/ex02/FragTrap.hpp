@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:18:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/13 17:16:17 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/14 12:05:51 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class FragTrap : public ClapTrap
 {
 public:
-	FragTrap(std::string &name);
+	FragTrap(std::string name);
 	void highFivesGuys(void);
 	~FragTrap();
 };

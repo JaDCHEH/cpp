@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:33:43 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/11 20:18:02 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/16 12:45:14 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,25 @@ void Fixed::operator=(const Fixed &fixed)
 	this->setRawBits(fixed.getRawBits());
 }
 
-const Fixed Fixed::operator+(const Fixed &fixed)
+const Fixed Fixed::operator + (const Fixed &fixed)
 {
 	Fixed result;
 	result.number = (this->toFloat() + fixed.toFloat()) * (1 << this->bites);
 	return result;
 }
-const Fixed Fixed::operator-(const Fixed &fixed)
+const Fixed Fixed::operator - (const Fixed &fixed)
 {
 	Fixed result;
 	result.number = (this->toFloat() - fixed.toFloat()) * (1 << this->bites);
 	return result;
 }
-const Fixed Fixed::operator/(const Fixed &fixed)
+const Fixed Fixed::operator / (const Fixed &fixed)
 {
 	Fixed result;
 	result.number = (this->toFloat() / fixed.toFloat()) * (1 << this->bites);
 	return result;
 }
-const Fixed Fixed::operator*(const Fixed &fixed)
+const Fixed Fixed::operator * (const Fixed &fixed)
 {
 	Fixed result;
 	result.number = (this->toFloat() * fixed.toFloat()) * (1 << this->bites);

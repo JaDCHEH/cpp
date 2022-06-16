@@ -6,24 +6,25 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:52:38 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/11 19:34:03 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/16 15:24:30 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "point.hpp"
 #include <iostream>
+
+bool bsp( point const a, point const b, point const c, point const point);
 
 int main()
 {
-	Fixed a;
-	Fixed b( Fixed( 5.05f ) * Fixed( 2 ) );
+	point a(0.5f,0.25f);
+	point b(13.5f,22.75f);
+	point c(12,3);
+	point x(7, 30);
+	point y(7.12f, 6.25f);
 	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << bsp(a, b, c ,x) << std::endl;
+	std::cout << y.Tarea(a, b) << std::endl;
+	std::cout << bsp(a, b, c ,y) << std::endl;
 	return 0;
 }

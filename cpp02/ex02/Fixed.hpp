@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:34:00 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/11 19:52:03 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/16 14:52:21 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	Fixed(const Fixed &fixed);
 	Fixed(const int i);
 	Fixed(const float f);
-	void operator=(const Fixed &fixed);
+	Fixed & operator=(const Fixed &fixed);
 	Fixed operator++(void);
 	Fixed operator--(void);
 	Fixed operator++(int);

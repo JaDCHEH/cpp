@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:33:43 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/11 17:09:53 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/16 14:52:55 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,11 @@ int Fixed::toInt( void ) const
 	return a;
 }
 
-void Fixed::operator=(const Fixed &fixed)
+Fixed & Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->setRawBits(fixed.getRawBits());
+	return (*this);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed &fixed)

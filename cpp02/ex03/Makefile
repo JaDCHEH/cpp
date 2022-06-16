@@ -1,4 +1,4 @@
-NAME = fixed
+NAME = bsp
 
 CC = @c++
 
@@ -6,6 +6,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CPP_FILES = main.cpp \
 			Fixed.cpp \
+			point.cpp \
+			bsp.cpp \
 
 all : $(NAME)
 

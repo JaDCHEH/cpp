@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:33:43 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/16 12:45:14 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/16 14:53:05 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,10 @@ int Fixed::toInt( void ) const
 	return a;
 }
 
-void Fixed::operator=(const Fixed &fixed)
+Fixed & Fixed::operator=(const Fixed &fixed)
 {
 	this->setRawBits(fixed.getRawBits());
+	return (*this);
 }
 
 const Fixed Fixed::operator + (const Fixed &fixed)

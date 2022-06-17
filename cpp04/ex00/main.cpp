@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 19:02:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:07:03 by cjad             ###   ########.fr       */
+/*   Created: 2022/06/17 19:05:29 by cjad              #+#    #+#             */
+/*   Updated: 2022/06/17 19:06:15 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cat.hpp"
+#include "dog.hpp"
 
-cat::cat()
+int main()
 {
-	
-}
-
-void cat::makeSound() const
-{
-	std::cout << "Meoooowwww!!!" << std::endl;
-}
-
-cat::~cat()
-{
-	
+	const animal* meta = new animal();
+	const animal* j = new dog();
+	const animal* i = new cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	return 0;
 }

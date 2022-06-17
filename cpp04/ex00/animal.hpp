@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:58:31 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 18:44:58 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/17 19:06:45 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ protected:
 	std::string type;
 public:
 	animal();
-	std::string getType();
-	void makeSound();
+	std::string getType() const;
+	void makeSound() const;
 	~animal();
 };
 

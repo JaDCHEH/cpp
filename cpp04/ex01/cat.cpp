@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/18 12:33:12 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/18 13:06:20 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void cat::makeSound() const
 cat::~cat()
 {
 	delete this->catbrain;
-	std::cout << "cat destroyed and it's brain deleted" << std::endl;
+	std::cout << "cat destroyed" << std::endl;
 }

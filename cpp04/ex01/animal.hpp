@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:58:31 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:12:44 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:37:37 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	animal();
 	std::string getType() const;
 	virtual void makeSound() const;
-	~animal();
+	virtual ~animal();
 };
 
 

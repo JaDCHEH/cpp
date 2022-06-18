@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:05:29 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:06:15 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:37:11 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 
 int main()
 {
-	const animal* meta = new animal();
 	const animal* j = new dog();
 	const animal* i = new cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	delete j;
+	delete i;
 	return 0;
 }

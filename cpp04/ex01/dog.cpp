@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:35 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:08:54 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:33:23 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 dog::dog()
 {
+	this->dogbrain = new brain();
 	this->type = "dog";
 }
 void dog::makeSound() const
@@ -22,5 +23,6 @@ void dog::makeSound() const
 }
 dog::~dog()
 {
-	
+	delete this->dogbrain;
+	std::cout << "dog destroyed and it's brain deleted" << std::endl;
 }

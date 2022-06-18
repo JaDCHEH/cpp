@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:00:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/18 12:27:27 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:30:47 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class cat : public animal
 {
 private:
-	brain* brain;
+	brain* catbrain;
 public:
 	cat();
 	void makeSound() const;

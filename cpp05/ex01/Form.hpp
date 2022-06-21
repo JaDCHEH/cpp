@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 11:29:43 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/21 15:36:03 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,29 @@ private:
 	const int grade_requiredsign;
 	const int grade_requiredexec;
 public:
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		GradeTooHighException(){}
+		const char *exception(){
+			return "Grade is too high";
+		}
+	};
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		GradeTooLowException(){}
+		const char *exception(){
+			return "Grade is too Low";
+		}
+	};
 	Form(std::string name, int signgrade, int execgrade);
 	friend std::ostream& operator<<(std::ostream& os, Form &Form);
-	std::string &getName();
+	const std::string &getName();
 	bool getStatus();
-	int getExecgrade();
-	int getSigngrade();
+	const int getExecgrade();
+	const int getSigngrade();
+	void beSigned(Bureaucrat &bureau);
 	~Form();
 };
 

@@ -17,6 +17,6 @@ $(NAME) : $(CPP_FILES)
 	$(CC) $(CFLAGS) $(CPP_FILES) -o $(NAME)
 
 clean :
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) *_shrubbery
 
 re : $(clean) $(all)

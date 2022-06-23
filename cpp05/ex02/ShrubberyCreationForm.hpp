@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 15:58:28 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 16:03:54 by cjad             ###   ########.fr       */
+/*   Created: 2022/06/23 10:37:38 by cjad              #+#    #+#             */
+/*   Updated: 2022/06/23 10:51:19 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
+# include "Form.hpp"
+# include <fstream>
 
-int main()
+class ShrubberyCreationForm : public Form
 {
-	Bureaucrat bureau("Jad", 9);
-	Form form("Game", 10, 20);
-	Form form2("Life", 1, 2);
-	
-	std::cout << bureau << std::endl;
-	std::cout << form << std::endl;
-	std::cout << form2 << std::endl;
-	form.beSigned(bureau);
-	std::cout << form << std::endl;
-	form2.beSigned(bureau);
-	std::cout << form2 << std::endl;
-	form.beSigned(bureau);
-}
+private:
+	std::string Target;
+public:
+	ShrubberyCreationForm(std::string Target);
+	void executedBy(Bureaucrat &bureau);
+	~ShrubberyCreationForm();
+};
+
+#endif

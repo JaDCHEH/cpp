@@ -6,11 +6,12 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:37:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 11:48:06 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:53:58 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int Grade) : Name(name)
 {
@@ -94,6 +95,14 @@ bool Bureaucrat::SignForm(int signgrade)
 		return 1;
 	}
 	return 0;
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	if(this->getGrade() < form.getExecgrade() && form.getStatus())
+		form.executed();
+	else
+		std::cout << this->getName() << " can't execute this form " << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat &bureau)

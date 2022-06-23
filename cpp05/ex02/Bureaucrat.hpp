@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 11:47:48 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:50:57 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <string>
 # include <iostream>
 # include <stdexcept>
+
+class Form;
 
 class Bureaucrat
 {
@@ -45,6 +47,7 @@ public:
 	bool SignForm(int Signgrade);
 	friend std::ostream& operator<<(std::ostream& os, Bureaucrat &bureau);
 	void decrementGrade();
+	void executeForm(Form const & form);
 	const std::string &getName() const;
 };
 

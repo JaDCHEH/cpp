@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:13:07 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 11:19:17 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:03:07 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 	std::string Target;
 public:
 	PresidentialPardonForm(std::string Target);
-	void executedBy(Bureaucrat &bureau);
+	void executed() const;
 	~PresidentialPardonForm();
 };
 

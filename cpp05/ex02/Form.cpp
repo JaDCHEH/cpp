@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 16:03:07 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:12:03 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,22 @@ std::ostream& operator<<(std::ostream& os, Form &Form)
 	return os;
 }
 
-const std::string &Form::getName()
+const std::string &Form::getName() const
 {
 	return this->name;
 }
 
-bool Form::getStatus()
+bool Form::getStatus() const
 {
 	return this->status;
 }
 
-int Form::getExecgrade()
+int Form::getExecgrade() const
 {
 	return this->grade_requiredexec;
 }
 
-int Form::getSigngrade()
+int Form::getSigngrade() const
 {
 	return this->grade_requiredsign;
 }
@@ -75,6 +75,35 @@ void Form::beSigned(Bureaucrat &bureau)
 	}
 	else
 		std::cout << bureau.getName() << " couldn't sign " << this->getName() << " because Form is already signed" << std::endl;
+}
+
+void Form::execute(Bureaucrat const & executor) const
+{
+	try
+	{
+		if(this->status == 0)
+			throw Form::UnsignedException();
+		else if (executor.getGrade() > this->getExecgrade())
+		{
+			throw Bureaucrat::GradeTooLowException();
+		}
+		else
+			this->executed();
+	}
+	catch(Form::UnsignedException& e)
+	{
+		std::cerr << e.exception() << '\n';
+	}
+	catch(Bureaucrat::GradeTooLowException& e)
+	{
+		std::cout << "wawawa" << std::endl;
+		std::cerr << e.exception() << '\n';
+	}
+	
+}
+void Form::executed() const
+{
+	std::cout << "this Form has no execution" << std::endl;
 }
 
 Form::~Form()

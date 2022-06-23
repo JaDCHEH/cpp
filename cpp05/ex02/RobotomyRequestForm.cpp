@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:37:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 11:17:44 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:03:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,12 @@ RobotomyRequestForm::RobotomyRequestForm(std::string Target) : Form("RobotomyReq
 	this->Target = Target;	
 }
 
-void RobotomyRequestForm::executedBy(Bureaucrat &bureau)
+void RobotomyRequestForm::executed() const
 {
-	if (this->getStatus() && this->getExecgrade() > bureau.getGrade())
-	{
-		if (rand() % 2)
-			std::cout << this->Target << " has been robotomized successfully." << std::endl;
-		else
-			std::cout << "the robotomy failed." << std::endl;
-	}
+	if (rand() % 2)
+		std::cout << this->Target << " has been robotomized successfully." << std::endl;
 	else
-		std::cout << bureau.getName() << " couldn't execute the form because it wasn't signed or the grade is too high" << std::endl;
+		std::cout << "the robotomy failed." << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

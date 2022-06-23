@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 15:57:43 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 11:47:48 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	public:
 		GradeTooHighException(){}
 		const char *exception(){
-			return "This Grade is too high";
+			return "Bureau Grade is too high";
 		}
 	};
 	class GradeTooLowException : public std::exception
@@ -35,17 +35,17 @@ public:
 	public:
 		GradeTooLowException(){}
 		const char *exception(){
-			return "This Grade is too Low";
+			return "Bureau Grade is too Low";
 		}
 	};
 	Bureaucrat(std::string name, int Grade);
 	~Bureaucrat();
-	int getGrade();
+	int getGrade() const;
 	void incrementGrade();
 	bool SignForm(int Signgrade);
 	friend std::ostream& operator<<(std::ostream& os, Bureaucrat &bureau);
 	void decrementGrade();
-	const std::string &getName();
+	const std::string &getName() const;
 };
 
 #endif

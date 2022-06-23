@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:13:02 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 10:37:05 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:03:34 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@ PresidentialPardonForm::PresidentialPardonForm(std::string Target) : Form("Presi
 	this->Target = Target;
 }
 
-void PresidentialPardonForm::executedBy(Bureaucrat &bureau)
+void PresidentialPardonForm::executed() const
 {
-	if (this->getStatus() && this->getExecgrade() > bureau.getGrade())
-	{
-		std::cout << this->Target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	}
-	else
-		std::cout << bureau.getName() << " couldn't execute the form because it wasn't signed or the grade is too high" << std::endl;
+	std::cout << this->Target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()

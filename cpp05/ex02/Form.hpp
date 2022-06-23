@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 15:53:28 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:06:17 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	public:
 		GradeTooHighException(){}
 		const char *exception(){
-			return "Grade is too high";
+			return "Form Grade is too high";
 		}
 	};
 	class GradeTooLowException : public std::exception
@@ -35,15 +35,25 @@ public:
 	public:
 		GradeTooLowException(){}
 		const char *exception(){
-			return "Grade is too Low";
+			return "Form Grade is too Low";
+		}
+	};
+	class UnsignedException : public std::exception
+	{
+	public:
+		UnsignedException(){}
+		const char *exception(){
+			return "Form is not signed";
 		}
 	};
 	Form(std::string name, int signgrade, int execgrade);
 	friend std::ostream& operator<<(std::ostream& os, Form &Form);
-	const std::string &getName();
-	bool getStatus();
-	int getExecgrade();
-	int getSigngrade();
+	const std::string &getName() const;
+	bool getStatus() const;
+	int getExecgrade() const;
+	int getSigngrade() const;
+	virtual void executed() const;
+	void execute(Bureaucrat const & executor) const;
 	void beSigned(Bureaucrat &bureau);
 	~Form();
 };

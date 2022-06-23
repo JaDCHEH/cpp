@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:58:28 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 11:09:05 by cjad             ###   ########.fr       */
+/*   Updated: 2022/06/23 12:10:00 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	Bureaucrat bureau("Jad", 1);
+	Bureaucrat bureau("Jad", 150);
 	ShrubberyCreationForm form("house");
 	RobotomyRequestForm form1("human");
 	PresidentialPardonForm form2("criminel");
@@ -28,14 +28,14 @@ int main()
 	form.beSigned(bureau);
 	form1.beSigned(bureau);
 	form2.beSigned(bureau);
-	form.executedBy(bureau);
-	form1.executedBy(bureau);
-	form1.executedBy(bureau);
-	form1.executedBy(bureau);
-	form1.executedBy(bureau);
-	form1.executedBy(bureau);
-	form1.executedBy(bureau);
-	form1.executedBy(bureau);
-	form1.executedBy(bureau);
-	form2.executedBy(bureau);
+	form.execute(bureau);
+	form1.execute(bureau);
+//	form1.execute(bureau);
+//	form1.execute(bureau);
+//	form1.execute(bureau);
+//	form1.execute(bureau);
+//	form1.execute(bureau);
+//	form1.execute(bureau);
+//	form1.execute(bureau);
+	form2.execute(bureau);
 }

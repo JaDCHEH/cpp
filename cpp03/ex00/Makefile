@@ -15,4 +15,4 @@ $(NAME) : $(CPP_FILES)
 clean :
 	@rm -rf $(NAME)
 
-re : $(clean) $(all)
+re : clean all

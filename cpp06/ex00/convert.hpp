@@ -1,21 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 15:02:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/29 15:39:50 by cjad             ###   ########.fr       */
+/*   Created: 2022/06/29 14:45:06 by cjad              #+#    #+#             */
+/*   Updated: 2022/06/29 14:45:45 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CONVERT_HPP
+# define CONVERT_HPP
 
-int	main()
-{
-	Zombie *zombie = newZombie("yal3ab");
-	randomChump("mkorchi");
-	zombie->announce();
-	delete(zombie);
-}
+
+#endif

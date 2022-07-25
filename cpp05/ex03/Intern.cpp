@@ -14,7 +14,6 @@
 
 Intern::Intern()
 {
-	
 }
 
 Form *Intern::ShrubberyForm(std::string Target)

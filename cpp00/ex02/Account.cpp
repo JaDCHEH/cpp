@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   account.cpp                                        :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 12:00:46 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/02 14:04:48 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/29 11:53:57 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -37,7 +38,16 @@ int	Account::getNbWithdrawals( void )
 
 void	Account::_displayTimestamp( void )
 {
-	std::cout << "[19920104_091532] ";
+	std::time_t t = std::time(0);
+    std::tm* now = std::localtime(&t);
+    std::cout << "[" << (now->tm_year + 1900) 
+         << (now->tm_mon + 1)
+         <<  now->tm_mday
+		 << "_"
+		 << now->tm_hour
+		 << now->tm_min
+		 << now->tm_sec
+         << "] ";
 }
 
 int	Account::checkAmount( void ) const
@@ -52,7 +62,8 @@ Account::Account(int initial_deposit)
 	this->_accountIndex = Account::_nbAccounts;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
-	std::cout << "[19920104_091532] index:" << this->_accountIndex;
+	Account::_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount << ";created" << std::endl;
 	Account::_nbAccounts++;
 }

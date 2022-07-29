@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:33:43 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/16 14:52:55 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/28 19:29:13 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Fixed::Fixed(const int i)
 	std::cout << "int constructor called" << std::endl;
 	this->setRawBits(i << this->bites);
 }
+
 Fixed::Fixed(const float f)
 {
 	std::cout << "float constructor called" << std::endl;

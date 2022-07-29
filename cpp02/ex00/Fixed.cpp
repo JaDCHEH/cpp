@@ -6,13 +6,11 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:33:43 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/11 17:10:50 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/28 17:58:11 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-const int Fixed::bites = 8;
 
 const int Fixed::bites = 8;
 
@@ -36,6 +34,7 @@ void Fixed::operator=(const Fixed &fixed)
 
 int Fixed::getRawBits(void) const
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->number);
 }
 

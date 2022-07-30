@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 15:53:28 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/29 16:58:22 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ public:
 		}
 	};
 	Form(std::string name, int signgrade, int execgrade);
-	friend std::ostream& operator<<(std::ostream& os, Form &Form);
 	const std::string &getName();
 	bool getStatus();
 	int getExecgrade();

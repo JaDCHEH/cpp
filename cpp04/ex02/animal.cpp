@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 18:45:05 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:06:53 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/29 16:39:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ animal::animal()
 std::string animal::getType() const
 {
 	return this->type;
-}
-
-void animal::makeSound() const
-{
-	std::cout << "I don't know what to say" << std::endl;
 }
 
 animal::~animal()

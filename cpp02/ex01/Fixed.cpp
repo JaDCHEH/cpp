@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:33:43 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/28 19:29:13 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/29 18:17:14 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ Fixed & Fixed::operator=(const Fixed &fixed)
 
 std::ostream& operator<<(std::ostream& os, const Fixed &fixed)
 {
-	float a = (float) fixed.number / (float) (1 << fixed.bites);
+	float a = (float) fixed.getRawBits() / (float) (1 << 8);
 	os << a;
 	return os;
 }

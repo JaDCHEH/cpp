@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 15:24:28 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/29 16:58:14 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ public:
 	~Bureaucrat();
 	int getGrade();
 	void incrementGrade();
-	friend std::ostream& operator<<(std::ostream& os, Bureaucrat &bureau);
 	void decrementGrade();
 	const std::string &getName();
 };

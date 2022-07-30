@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:34:00 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/16 14:52:14 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/29 16:58:09 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ public:
 	Fixed operator-(const Fixed &fixed);
 	Fixed operator/(const Fixed &fixed);
 	Fixed operator*(const Fixed &fixed);
-	friend std::ostream& operator<<(std::ostream& os, const Fixed &fixed);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat( void ) const;

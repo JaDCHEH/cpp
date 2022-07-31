@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:19:21 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 15:56:20 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 14:27:17 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,31 @@ ClapTrap::ClapTrap(std::string name)
 	this->hitpoint = 10;
 	std::cout << "ClapTrap Constructor called" << std::endl;
 }
+
+ClapTrap::ClapTrap()
+{
+	this->name = "";
+	this->ad = 0;
+	this->energy = 10;
+	this->hitpoint = 10;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &ClapTrap)
+{
+	this->name = ClapTrap.name;
+	this->ad = ClapTrap.ad;
+	this->energy = ClapTrap.energy;
+	this->hitpoint = ClapTrap.hitpoint;
+}
+
+void ClapTrap::operator=(const ClapTrap &ClapTrap)
+{
+	this->name = ClapTrap.name;
+	this->ad = ClapTrap.ad;
+	this->energy = ClapTrap.energy;
+	this->hitpoint = ClapTrap.hitpoint;
+}
+
 
 void ClapTrap::attack(const std::string& target)
 {

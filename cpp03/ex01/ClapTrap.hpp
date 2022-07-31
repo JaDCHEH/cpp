@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:09:19 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 12:02:42 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 14:30:44 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ protected:
 	unsigned int energy;
 	unsigned int ad;
 public:
+	ClapTrap();
+	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &ClapTrap);
+	void operator=(const ClapTrap &ClapTrap);
 	ClapTrap(std::string name);
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);

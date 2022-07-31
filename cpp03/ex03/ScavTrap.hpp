@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:04:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 15:31:31 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 15:41:58 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ protected:
 	const static unsigned int initialenergy = 50;
 	const static unsigned int initialad = 20;
 public:
-	ScavTrap(std::string name);
 	ScavTrap();
-	void attack(const std::string &name);
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap &Scav);
+	void operator=(const ScavTrap &Scav);
+	void attack(const std::string &target);
 	void guardGate();
 	~ScavTrap();
 };

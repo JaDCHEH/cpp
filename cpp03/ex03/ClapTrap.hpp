@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:09:19 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 14:30:44 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 15:39:35 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ protected:
 	unsigned int hitpoint;
 	unsigned int energy;
 	unsigned int ad;
+	const static unsigned int initialhitpoint = 10;
+	const static unsigned int initialenergy = 10;
+	const static unsigned int initialad = 0;
 public:
 	ClapTrap();
 	ClapTrap(std::string name);

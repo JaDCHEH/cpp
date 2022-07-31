@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:12:23 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/14 15:55:33 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 15:08:40 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,43 @@
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap Constructor Called" << std::endl;
+	std::cout << "ScavTrap " << this->name << " constructor Called" << std::endl;
 	this->ad = 20;
 	this->energy = 50;
 	this->hitpoint = 100;
 }
+
+void ScavTrap::attack(const std::string& target)
+{
+	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl; 
+}
+
+ScavTrap::ScavTrap()
+{
+	this->name = "";
+	this->ad = 20;
+	this->energy = 50;
+	this->hitpoint = 100;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &Scav)
+{
+	this->name = Scav.name;
+	this->ad = Scav.ad;
+	this->energy = Scav.energy;
+	this->hitpoint = Scav.hitpoint;
+}
+
+void ScavTrap::operator=(const ScavTrap &Scav)
+{
+	this->name = Scav.name;
+	this->ad = Scav.ad;
+	this->energy = Scav.energy;
+	this->hitpoint = Scav.hitpoint;
+}
+
+
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap Destructor Called" << std::endl;

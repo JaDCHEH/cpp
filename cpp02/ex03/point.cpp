@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:21:57 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/16 15:08:44 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/30 20:07:03 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Fixed point::Getb() const
 Fixed point::Tarea(const point &a, const point &b) const
 {
 	Fixed x(0.5f);
-	Fixed area (x * (this->Geta() * (a.Getb() - b.Getb()) + a.Geta()*(b.Getb()-this->Getb())+b.Geta()*(this->Getb() - a.Getb())));
+	Fixed area (x * (this->Geta() * (a.Getb() - b.Getb()) + a.Geta() * (b.Getb()-this->Getb()) + b.Geta() * (this->Getb() - a.Getb())));
 	if (area < 0)
 		area = area * -1;
 	return area;

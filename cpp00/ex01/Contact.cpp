@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:27:47 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/01 16:07:49 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 12:22:57 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 Contact::Contact()
 {
@@ -21,6 +21,57 @@ Contact::~Contact()
 {
 	std::cout << "Contact Destructor called" << std::endl;
 }
+
+void Contact::setFirstName(std::string &str)
+{
+	this->FirstName = str;
+}
+
+std::string &Contact::getFirstName()
+{
+	return this->FirstName;
+}
+
+void Contact::setLastName(std::string &str)
+{
+	this->LastName = str;
+}
+
+std::string &Contact::getLastName()
+{
+	return this->LastName;
+}
+
+void Contact::setNickName(std::string &str)
+{
+	this->NickName = str;
+}
+
+std::string &Contact::getNickName()
+{
+	return this->NickName;
+}
+
+void Contact::setDarkestsecret(std::string &str)
+{
+	this->Darkestsecret = str;
+}
+
+std::string &Contact::getDarkestsecret()
+{
+	return this->Darkestsecret;
+}
+
+void Contact::setPhoneNumber(std::string &str)
+{
+	this->PhoneNumber = str;
+}
+
+std::string &Contact::getPhoneNumber()
+{
+	return this->PhoneNumber;
+}
+
 
 void	Contact::printcolumn(int i)
 {

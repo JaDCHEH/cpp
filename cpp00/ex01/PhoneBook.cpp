@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:32:58 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/28 13:26:30 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 12:24:29 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.class.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -33,14 +33,14 @@ void PhoneBook::printall(void)
 	std::string index;
 
 	i = 0;
-	while (i < 8 && !this->contact[i].FirstName.empty())
+	while (i < 8 && !this->contact[i].getFirstName().empty())
 	{
 		this->contact[i].printcolumn(i);
 		i++;
 	}
 	std::cout << "Enter index" << std::endl;
 	std::getline(std::cin, index);
-	if ( index.find_first_not_of("0123456789") == std::string::npos
+	if (!index.empty() && index.find_first_not_of("0123456789") == std::string::npos
 		&& (atoi(index.c_str()) < 8 && atoi(index.c_str()) >= 0))
 		this->contact[atoi(index.c_str())].printcontact();
 	else

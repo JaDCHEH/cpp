@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:37:59 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/29 22:38:52 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 12:21:40 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-#define PHONEBOOK_CLASS_HPP
-# include "Contact.class.hpp"
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+# include "Contact.hpp"
 
 class PhoneBook
 {
-public:
+private:
 	Contact contact[8];
+
+public:
 	void add(Contact &contact, int i);
 	void printall(void);
 	PhoneBook(/* args */);

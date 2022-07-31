@@ -6,31 +6,61 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:34:15 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/01 12:12:29 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 12:22:24 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.class.hpp"
+#include "PhoneBook.hpp"
 
 void addContact(PhoneBook &PhoneBook, int i)
 {
 	Contact  Contact;
+	std::string str;
 	std::cout << "Enter FirstName" << std::endl;
-	std::getline(std::cin, Contact.FirstName);
-	std::cout << "Enter LastName" << std::endl;
-	std::getline(std::cin, Contact.LastName);
-	std::cout << "Enter NickName" << std::endl;
-	std::getline(std::cin, Contact.NickName);
-	std::cout << "Enter PhoneNumber" << std::endl;
-	std::getline(std::cin, Contact.PhoneNumber);
-	std::cout << "Enter DarkestSecret" << std::endl;
-	std::getline(std::cin, Contact.Darkestsecret);
-	if (Contact.FirstName.empty() || Contact.LastName.empty() || Contact.PhoneNumber.empty()
-		|| Contact.Darkestsecret.empty() || Contact.NickName.empty())
+	std::getline(std::cin, str);
+	if (str.empty())
 	{
-		std::cout << "One of the informations is empty" << std::endl;
+		std::cout << "FirstName is empty" << std::endl;
 		return ;
 	}
+	else
+		Contact.setFirstName(str);
+	std::cout << "Enter LastName" << std::endl;
+	std::getline(std::cin, str);
+	if (str.empty())
+	{
+		std::cout << "LastName is empty" << std::endl;
+		return ;
+	}
+	else
+		Contact.setLastName(str);
+	std::cout << "Enter NickName" << std::endl;
+	std::getline(std::cin, str);
+	if (str.empty())
+	{
+		std::cout << "NickName is empty" << std::endl;
+		return ;
+	}
+	else
+		Contact.setNickName(str);
+	std::cout << "Enter PhoneNumber" << std::endl;
+	std::getline(std::cin, str);
+	if (str.empty())
+	{
+		std::cout << "PhoneNumber is empty" << std::endl;
+		return ;
+	}
+	else
+		Contact.setPhoneNumber(str);
+	std::cout << "Enter DarkestSecret" << std::endl;
+	std::getline(std::cin, str);
+	if (str.empty())
+	{
+		std::cout << "DarkestSecret is empty" << std::endl;
+		return ;
+	}
+	else
+		Contact.setDarkestsecret(str);
 	PhoneBook.add(Contact, i);
 }
 

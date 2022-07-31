@@ -6,16 +6,18 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:54:44 by cjad              #+#    #+#             */
-/*   Updated: 2022/05/28 18:32:43 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 12:01:35 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
 int	main(int ac, char **av)
 {
 	int	i;
 	int	a;
+	std::string str;
 
 	i = 1;
 	if (ac > 1)
@@ -23,13 +25,13 @@ int	main(int ac, char **av)
 		while (i < ac)
 		{
 			a = 0;
-			while (av[i][a])
+			str = av[i];
+			while (str[a])
 			{
-				if (av[i][a] >= 'a' && av[i][a] <= 'z')
-					av[i][a] = av[i][a] - 32;
+				str[a] = toupper(str[a]);
 				a++;
 			}
-			std::cout << av[i];
+			std::cout << str;
 			i++;
 		}
 	}

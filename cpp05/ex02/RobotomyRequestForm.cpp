@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:37:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 12:03:36 by cjad             ###   ########.fr       */
+/*   Updated: 2022/07/31 10:49:52 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string Target) : Form("RobotomyReq
 
 void RobotomyRequestForm::executed() const
 {
+	srand(time(NULL));
 	if (rand() % 2)
 		std::cout << this->Target << " has been robotomized successfully." << std::endl;
 	else

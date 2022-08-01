@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:27:47 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 12:22:57 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/01 12:14:21 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	Contact::printcolumn(int i)
 	std::string str;
 
 	std::cout.width(11);
-	std::cout << std::right << i << "|";
+	std::cout << std::right << i + 1 << "|";
 	std::cout.width(11);
 	if (this->FirstName.size() > 10)
 	{
@@ -89,7 +89,7 @@ void	Contact::printcolumn(int i)
 	else
 		std::cout << std::right << this->FirstName << "|";
 	std::cout.width(11);
-	if (this->LastName.size() >= 10)
+	if (this->LastName.size() > 10)
 	{
 		str = this ->LastName.substr(0, 10);
 		str[9] = '.';

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 12:00:46 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/29 11:53:57 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/01 17:58:25 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,8 @@ bool	Account::makeWithdrawal( int withdrawal )
 	}
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount;
 	this->_nbWithdrawals++;
-	Account::_totalNbDeposits++;
+	Account::_totalNbWithdrawals++;
+	Account::_totalAmount-= withdrawal;
 	this->_amount -= withdrawal;
 	std::cout << ";withdrawal:" << withdrawal << ";amount:" << this->_amount;
 	std::cout << ";nb_withdrawals:" << this->_nbWithdrawals++ << std::endl;

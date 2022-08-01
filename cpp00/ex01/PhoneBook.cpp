@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:32:58 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 12:24:29 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/01 17:55:14 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ PhoneBook::~PhoneBook()
 	std::cout << "PhoneBook Destructor called" << std::endl;
 }
 
-void PhoneBook::add(Contact &Contact, int i)
+void PhoneBook::add(Contact &Contact, int *i)
 {
-	this->contact[i % 8] = Contact;
+	this->contact[(*i) % 8] = Contact;
 }
 
 void PhoneBook::printall(void)
@@ -41,8 +41,10 @@ void PhoneBook::printall(void)
 	std::cout << "Enter index" << std::endl;
 	std::getline(std::cin, index);
 	if (!index.empty() && index.find_first_not_of("0123456789") == std::string::npos
-		&& (atoi(index.c_str()) < 8 && atoi(index.c_str()) >= 0))
-		this->contact[atoi(index.c_str())].printcontact();
+		&& (atoi(index.c_str()) <= 8 && atoi(index.c_str()) > 0))
+		this->contact[atoi(index.c_str()) - 1].printcontact();
+	else if (index[0] == '\0')
+		exit(1);
 	else
 		std::cout << "The index you entered is wrong" << std::endl;
 }

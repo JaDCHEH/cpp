@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:20:08 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 12:21:58 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 12:29:58 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 #include <iostream>
 #include <string>
+#include <fstream>
 
 class Contact
 {

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:32:58 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/01 17:55:14 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 12:32:29 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void PhoneBook::printall(void)
 	}
 	std::cout << "Enter index" << std::endl;
 	std::getline(std::cin, index);
+	if (std::cin.eof())
+		exit (1);
 	if (!index.empty() && index.find_first_not_of("0123456789") == std::string::npos
 		&& (atoi(index.c_str()) <= 8 && atoi(index.c_str()) > 0))
 		this->contact[atoi(index.c_str()) - 1].printcontact();

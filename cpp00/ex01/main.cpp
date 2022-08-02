@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:34:15 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/01 18:06:15 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 12:32:08 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void addContact(PhoneBook &PhoneBook, int *i)
 	std::string str;
 	std::cout << "Enter FirstName" << std::endl;
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+		exit (1);
 	if (str.empty())
 	{
 		std::cout << "FirstName is empty" << std::endl;
@@ -27,6 +29,8 @@ void addContact(PhoneBook &PhoneBook, int *i)
 		Contact.setFirstName(str);
 	std::cout << "Enter LastName" << std::endl;
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+		exit (1);
 	if (str.empty())
 	{
 		std::cout << "LastName is empty" << std::endl;
@@ -36,6 +40,8 @@ void addContact(PhoneBook &PhoneBook, int *i)
 		Contact.setLastName(str);
 	std::cout << "Enter NickName" << std::endl;
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+		exit (1);
 	if (str.empty())
 	{
 		std::cout << "NickName is empty" << std::endl;
@@ -45,6 +51,8 @@ void addContact(PhoneBook &PhoneBook, int *i)
 		Contact.setNickName(str);
 	std::cout << "Enter PhoneNumber" << std::endl;
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+		exit (1);
 	if (str.empty())
 	{
 		std::cout << "PhoneNumber is empty" << std::endl;
@@ -54,6 +62,8 @@ void addContact(PhoneBook &PhoneBook, int *i)
 		Contact.setPhoneNumber(str);
 	std::cout << "Enter DarkestSecret" << std::endl;
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+		exit (1);
 	if (str.empty())
 	{
 		std::cout << "DarkestSecret is empty" << std::endl;
@@ -89,6 +99,8 @@ int	main()
 	while(1)
 	{
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			exit (1);
 		if (input.compare("ADD") == 0)
 			addContact(PhoneBook, &i);
 		else if (input.compare("SEARCH") == 0)

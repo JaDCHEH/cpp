@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 12:00:46 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/01 17:58:25 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 14:26:49 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,24 @@ void	Account::_displayTimestamp( void )
 {
 	std::time_t t = std::time(0);
     std::tm* now = std::localtime(&t);
-    std::cout << "[" << (now->tm_year + 1900) 
-         << (now->tm_mon + 1)
-         <<  now->tm_mday
-		 << "_"
-		 << now->tm_hour
-		 << now->tm_min
-		 << now->tm_sec
-         << "] ";
+    std::cout << "[" << (now->tm_year + 1900);
+	if ((now->tm_mon + 1) < 10)
+		std::cout << "0";
+    std::cout << (now->tm_mon + 1);
+	if (now->tm_mday < 10)
+		std::cout << "0";
+    std::cout <<  now->tm_mday;
+	std::cout << "_";
+	if (now->tm_hour < 10)
+		std::cout << "0";
+	std::cout << now->tm_hour;
+	if (now->tm_min < 10)
+		std::cout << "0";
+	std::cout << now->tm_min;
+	if (now->tm_sec < 10)
+		std::cout << "0";
+	std::cout << now->tm_sec;
+    std::cout << "] ";;
 }
 
 int	Account::checkAmount( void ) const

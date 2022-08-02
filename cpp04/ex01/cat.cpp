@@ -6,25 +6,25 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/18 13:06:20 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:38:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cat.hpp"
+#include "Cat.hpp"
 
-cat::cat()
+Cat::Cat()
 {
-	this->catbrain = new brain();
-	this->type = "cat";
+	this->CatBrain = new Brain();
+	this->type = "Cat";
 }
 
-void cat::makeSound() const
+void Cat::makeSound() const
 {
 	std::cout << "Meoooowwww!!!" << std::endl;
 }
 
-cat::~cat()
+Cat::~Cat()
 {
-	delete this->catbrain;
-	std::cout << "cat destroyed" << std::endl;
+	delete this->CatBrain;
+	std::cout << "Cat destroyed" << std::endl;
 }

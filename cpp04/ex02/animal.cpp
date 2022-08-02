@@ -6,24 +6,24 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 18:45:05 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/29 16:39:36 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:38:08 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.hpp"
+#include "Animal.hpp"
 
-animal::animal()
+Animal::Animal()
 {
 	std::cout << "Animal constructed" << std::endl;
 	this->type = "Unknown";
 }
 
-std::string animal::getType() const
+std::string Animal::getType() const
 {
 	return this->type;
 }
 
-animal::~animal()
+Animal::~Animal()
 {
 	std::cout << "Animal Destructed" << std::endl;
 }

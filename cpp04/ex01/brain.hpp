@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:23:51 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/18 13:08:18 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:44:34 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 #include <string>
 #include <iostream>
 
-class brain
+class Brain
 {
 private:
 	std::string ideas[100];
 public:
-	brain(/* args */);
-	~brain();
+	Brain(/* args */);
+	~Brain();
 };
 
 #endif

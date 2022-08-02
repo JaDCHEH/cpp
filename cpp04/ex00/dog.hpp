@@ -6,20 +6,20 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:01:02 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:07:10 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:43:49 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
-# include "animal.hpp"
+# include "Animal.hpp"
 
-class dog : public animal
+class Dog : public Animal
 {
 public:
-	dog();
+	Dog();
 	void makeSound() const;
-	~dog();
+	~Dog();
 };
 
 

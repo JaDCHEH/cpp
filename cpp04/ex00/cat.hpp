@@ -6,20 +6,20 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:00:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:06:59 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:43:22 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
-#include "animal.hpp"
+#include "Animal.hpp"
 
-class cat : public animal
+class Cat : public Animal
 {
 public:
-	cat();
+	Cat();
 	void makeSound() const;
-	~cat();
+	~Cat();
 };
 
 #endif

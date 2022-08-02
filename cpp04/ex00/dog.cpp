@@ -6,21 +6,21 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:35 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:08:54 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:38:17 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dog.hpp"
+#include "Dog.hpp"
 
-dog::dog()
+Dog::Dog()
 {
-	this->type = "dog";
+	this->type = "Dog";
 }
-void dog::makeSound() const
+void Dog::makeSound() const
 {
 	std::cout << "Woof Woof!!!" << std::endl;
 }
-dog::~dog()
+Dog::~Dog()
 {
 	
 }

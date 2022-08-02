@@ -6,18 +6,18 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:24:54 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/18 13:08:07 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:38:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "brain.hpp"
+#include "Brain.hpp"
 
-brain::brain()
+Brain::Brain()
 {
-	std::cout << "brain constructed" << std::endl;
+	std::cout << "Brain constructed" << std::endl;
 }
 
-brain::~brain()
+Brain::~Brain()
 {
-	std::cout << "brain destroyed" << std::endl;
+	std::cout << "Brain destroyed" << std::endl;
 }

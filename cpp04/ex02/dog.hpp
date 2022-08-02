@@ -6,23 +6,23 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:01:02 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/18 12:31:46 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:44:17 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
-# include "animal.hpp"
-# include "brain.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class dog : public animal
+class Dog : public Animal
 {
 private:
-	brain* dogbrain;
+	Brain* DogBrain;
 public:
-	dog();
+	Dog();
 	void makeSound() const;
-	~dog();
+	~Dog();
 };
 
 

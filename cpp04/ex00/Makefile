@@ -1,13 +1,13 @@
-NAME = animal
+NAME = Animal
 
 CC = @c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CPP_FILES = main.cpp \
-			animal.cpp \
-			dog.cpp \
-			cat.cpp \
+			Animal.cpp \
+			Dog.cpp \
+			Cat.cpp \
 
 all : $(NAME)
 

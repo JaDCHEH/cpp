@@ -6,23 +6,23 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:35 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/18 13:06:51 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:38:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dog.hpp"
+#include "Dog.hpp"
 
-dog::dog()
+Dog::Dog()
 {
-	this->dogbrain = new brain();
-	this->type = "dog";
+	this->DogBrain = new Brain();
+	this->type = "Dog";
 }
-void dog::makeSound() const
+void Dog::makeSound() const
 {
 	std::cout << "Woof Woof!!!" << std::endl;
 }
-dog::~dog()
+Dog::~Dog()
 {
-	delete this->dogbrain;
-	std::cout << "dog destroyed" << std::endl;
+	delete this->DogBrain;
+	std::cout << "Dog destroyed" << std::endl;
 }

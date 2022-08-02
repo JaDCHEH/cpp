@@ -6,23 +6,23 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/17 19:08:40 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/02 15:37:56 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cat.hpp"
+#include "Cat.hpp"
 
-cat::cat()
+Cat::Cat()
 {
-	this->type = "cat";
+	this->type = "Cat";
 }
 
-void cat::makeSound() const
+void Cat::makeSound() const
 {
 	std::cout << "Meoooowwww!!!" << std::endl;
 }
 
-cat::~cat()
+Cat::~Cat()
 {
 	
 }

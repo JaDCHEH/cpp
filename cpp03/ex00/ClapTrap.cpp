@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:19:21 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 14:27:17 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 18:41:57 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ ClapTrap::ClapTrap(const ClapTrap &ClapTrap)
 	this->hitpoint = ClapTrap.hitpoint;
 }
 
-void ClapTrap::operator=(const ClapTrap &ClapTrap)
+ClapTrap & ClapTrap::operator=(const ClapTrap &ClapTrap)
 {
 	this->name = ClapTrap.name;
 	this->ad = ClapTrap.ad;
 	this->energy = ClapTrap.energy;
 	this->hitpoint = ClapTrap.hitpoint;
+	return *this;
 }
 
 

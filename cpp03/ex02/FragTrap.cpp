@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:07:58 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 15:26:54 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 18:45:24 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ FragTrap::FragTrap(const FragTrap &Frag)
 	this->hitpoint = Frag.hitpoint;
 }
 
-void FragTrap::operator=(const FragTrap &Frag)
+FragTrap & FragTrap::operator=(const FragTrap &Frag)
 {
 	this->name =Frag.name;
 	this->ad =Frag.ad;
 	this->energy = Frag.energy;
 	this->hitpoint = Frag.hitpoint;
+	return *this;
 }
 
 void FragTrap::highFivesGuys(void)

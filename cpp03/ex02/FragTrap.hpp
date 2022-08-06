@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:18:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 15:41:53 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 18:45:52 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class FragTrap : public ClapTrap
 public:
 	FragTrap();
 	FragTrap(const FragTrap &Frag);
-	void operator=(const FragTrap &Frag);
+	FragTrap & operator=(const FragTrap &Frag);
 	FragTrap(std::string name);
 	void highFivesGuys(void);
 	~FragTrap();

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:04:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 15:06:24 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 18:43:32 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ public:
 	ScavTrap();
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &Scav);
-	void operator=(const ScavTrap &Scav);
+	ScavTrap & operator=(const ScavTrap &Scav);
 	void attack(const std::string &target);
 	void guardGate();
 	~ScavTrap();

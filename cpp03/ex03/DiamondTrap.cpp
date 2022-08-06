@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:21:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 15:48:27 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 18:48:12 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,14 @@ DiamondTrap::DiamondTrap(const DiamondTrap &diam)
 	this->ad = diam.ad ;
 }
 
-void DiamondTrap::operator=(const DiamondTrap &diam)
+DiamondTrap & DiamondTrap::operator=(const DiamondTrap &diam)
 {
 	this->name = diam.name ;
 	this->ClapTrap::name = diam.ClapTrap::name ;
 	this->hitpoint = diam.hitpoint ;
 	this->energy = diam.energy ;
 	this->ad = diam.ad ;
+	return *this;
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:12:23 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 15:08:40 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 18:45:39 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ ScavTrap::ScavTrap(const ScavTrap &Scav)
 	this->hitpoint = Scav.hitpoint;
 }
 
-void ScavTrap::operator=(const ScavTrap &Scav)
+ScavTrap & ScavTrap::operator=(const ScavTrap &Scav)
 {
 	this->name = Scav.name;
 	this->ad = Scav.ad;
 	this->energy = Scav.energy;
 	this->hitpoint = Scav.hitpoint;
+	return *this;
 }
 
 

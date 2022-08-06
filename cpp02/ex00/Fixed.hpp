@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:34:00 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/10 18:54:51 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 18:32:56 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
 	Fixed();
 	Fixed(const Fixed &fixed);
-	void operator=(const Fixed &fixed);
+	Fixed &operator=(const Fixed &fixed);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	~Fixed();

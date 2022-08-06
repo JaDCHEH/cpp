@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 15:11:36 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 17:21:59 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 17:51:32 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,9 @@ public:
 	};
 	void addnumber(int n);
 	void addnumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-	int longestSpan();
-	int ShortestSpan();
+	unsigned int longestSpan();
+	unsigned int ShortestSpan();
 	~Span();
 };
-
-Span::Span(/* args */)
-{
-}
-
-Span::~Span()
-{
-}
-
 
 #endif

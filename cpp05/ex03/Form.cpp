@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 12:12:03 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 15:52:14 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,16 @@
 
 Form::Form(std::string name, int signgrade, int execgrade) : name(name) , grade_requiredsign(signgrade), grade_requiredexec (execgrade)
 {
-	try
+	if (signgrade < 1 || execgrade < 1)
 	{
-		if (signgrade < 1 || execgrade < 1)
-		{
-			throw Form::GradeTooHighException();
-		}
-		if (signgrade > 150 || execgrade > 150)
-		{
-			throw Form::GradeTooLowException();
-		}
+		throw Form::GradeTooHighException();
 	}
-	catch(Form::GradeTooHighException &ex)
+	if (signgrade > 150 || execgrade > 150)
 	{
-		std::cout << ex.exception() << std::endl;
+		throw Form::GradeTooLowException();
 	}
-	catch(Form::GradeTooLowException &ex)
-	{
-		std::cout << ex.exception() << std::endl;
-	}
-	this->status = 0;
+	else
+		this->status = 0;
 }
 
 std::ostream& operator<<(std::ostream& os, Form &Form)
@@ -42,22 +32,22 @@ std::ostream& operator<<(std::ostream& os, Form &Form)
 	return os;
 }
 
-const std::string &Form::getName() const
+const std::string &Form::getName()
 {
 	return this->name;
 }
 
-bool Form::getStatus() const
+bool Form::getStatus()
 {
 	return this->status;
 }
 
-int Form::getExecgrade() const
+int Form::getExecgrade()
 {
 	return this->grade_requiredexec;
 }
 
-int Form::getSigngrade() const
+int Form::getSigngrade()
 {
 	return this->grade_requiredsign;
 }
@@ -75,35 +65,6 @@ void Form::beSigned(Bureaucrat &bureau)
 	}
 	else
 		std::cout << bureau.getName() << " couldn't sign " << this->getName() << " because Form is already signed" << std::endl;
-}
-
-void Form::execute(Bureaucrat const & executor) const
-{
-	try
-	{
-		if(this->status == 0)
-			throw Form::UnsignedException();
-		else if (executor.getGrade() > this->getExecgrade())
-		{
-			throw Bureaucrat::GradeTooLowException();
-		}
-		else
-			this->executed();
-	}
-	catch(Form::UnsignedException& e)
-	{
-		std::cerr << e.exception() << '\n';
-	}
-	catch(Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << "wawawa" << std::endl;
-		std::cerr << e.exception() << '\n';
-	}
-	
-}
-void Form::executed() const
-{
-	std::cout << "this Form has no execution" << std::endl;
 }
 
 Form::~Form()

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/29 16:58:39 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 15:52:39 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,34 +25,22 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		GradeTooHighException(){}
-		const char *exception(){
-			return "Form Grade is too high";
+		const char *what(){
+			return "Grade is too high";
 		}
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		GradeTooLowException(){}
-		const char *exception(){
-			return "Form Grade is too Low";
-		}
-	};
-	class UnsignedException : public std::exception
-	{
-	public:
-		UnsignedException(){}
-		const char *exception(){
-			return "Form is not signed";
+		const char *what(){
+			return "Grade is too Low";
 		}
 	};
 	Form(std::string name, int signgrade, int execgrade);
-	const std::string &getName() const;
-	bool getStatus() const;
-	int getExecgrade() const;
-	int getSigngrade() const;
-	virtual void executed() const;
-	void execute(Bureaucrat const & executor) const;
+	const std::string &getName();
+	bool getStatus();
+	int getExecgrade();
+	int getSigngrade();
 	void beSigned(Bureaucrat &bureau);
 	~Form();
 };

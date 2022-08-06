@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 16:03:07 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 15:52:14 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,16 @@
 
 Form::Form(std::string name, int signgrade, int execgrade) : name(name) , grade_requiredsign(signgrade), grade_requiredexec (execgrade)
 {
-	try
+	if (signgrade < 1 || execgrade < 1)
 	{
-		if (signgrade < 1 || execgrade < 1)
-		{
-			throw Form::GradeTooHighException();
-		}
-		if (signgrade > 150 || execgrade > 150)
-		{
-			throw Form::GradeTooLowException();
-		}
+		throw Form::GradeTooHighException();
 	}
-	catch(Form::GradeTooHighException &ex)
+	if (signgrade > 150 || execgrade > 150)
 	{
-		std::cout << ex.exception() << std::endl;
+		throw Form::GradeTooLowException();
 	}
-	catch(Form::GradeTooLowException &ex)
-	{
-		std::cout << ex.exception() << std::endl;
-	}
-	this->status = 0;
+	else
+		this->status = 0;
 }
 
 std::ostream& operator<<(std::ostream& os, Form &Form)

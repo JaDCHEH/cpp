@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/29 16:58:35 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 15:51:27 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include <string>
 # include <iostream>
 # include <stdexcept>
-
-class Form;
 
 class Bureaucrat
 {
@@ -27,27 +25,24 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		GradeTooHighException(){}
-		const char *exception(){
-			return "Bureau Grade is too high";
+		const char *what(){
+			return "This Grade is too high";
 		}
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		GradeTooLowException(){}
-		const char *exception(){
-			return "Bureau Grade is too Low";
+		const char *what(){
+			return "This Grade is too Low";
 		}
 	};
 	Bureaucrat(std::string name, int Grade);
 	~Bureaucrat();
-	int getGrade() const;
+	int getGrade();
 	void incrementGrade();
 	bool SignForm(int Signgrade);
 	void decrementGrade();
-	void executeForm(Form const & form);
-	const std::string &getName() const;
+	const std::string &getName();
 };
 
 #endif

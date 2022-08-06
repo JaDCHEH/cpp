@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 15:11:36 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 15:37:44 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/06 17:21:59 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,15 @@ public:
 	class SpanException : public std::exception
 	{
 	public:
-		SpanException();
 		virtual const char *what() const throw ()
 		{
 			return ("can't add a number , or there's no / only one number\n");
 		};
-		~SpanException();
 	};
-	
-	Span::Span()
-	{
-	}
-	
-	Span::~Span()
-	{
-	}
-	
 	void addnumber(int n);
+	void addnumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	int longestSpan();
+	int ShortestSpan();
 	~Span();
 };
 

@@ -35,9 +35,9 @@ Form *Intern::makeForm(std::string type, std::string Target)
 {
 	typedef Form* (Intern::*fun)(std::string);
 	int i = 0;
-	std::string a[3] = {"ShrubberyCreationForm","RobotomyRequestForm:","PresidentialPardonForm"};
+	std::string a[3] = {"ShrubberyCreationForm","RobotomyRequestForm","PresidentialPardonForm"};
 	fun f[3] = {&Intern::ShrubberyForm, &Intern::RobotomyForm , &Intern::PresidentialForm};
-	while (i < 0)
+	while (i < 3)
 	{
 		if(type.compare(a[i]) == 0)
 			return (this->*(f[i]))(Target);

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 17:40:10 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/07 13:39:16 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,20 @@ public:
 			return "Grade is too Low";
 		}
 	};
+	class UnsignedException : public std::exception
+	{
+	public:
+		const char *what()const throw(){
+			return "Form is not signed";
+		}
+	};
 	Form(std::string name, int signgrade, int execgrade);
 	const std::string &getName();
 	bool getStatus();
 	int getExecgrade();
 	int getSigngrade();
+	void execute(Bureaucrat & executor);
+	virtual void executed() const;
 	void beSigned(Bureaucrat &bureau);
 	~Form();
 };

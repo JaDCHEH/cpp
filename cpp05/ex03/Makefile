@@ -7,6 +7,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP_FILES = main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp \
+			Intern.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
 			PresidentialPardonForm.cpp \

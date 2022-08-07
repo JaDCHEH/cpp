@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 15:52:14 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/07 13:39:56 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,21 @@ void Form::beSigned(Bureaucrat &bureau)
 	}
 	else
 		std::cout << bureau.getName() << " couldn't sign " << this->getName() << " because Form is already signed" << std::endl;
+}
+
+void Form::execute(Bureaucrat & executor)
+{
+	if(this->status == 0)
+		throw Form::UnsignedException();
+	else if (executor.getGrade() > this->getExecgrade())
+		throw Bureaucrat::GradeTooLowException();
+	else
+		this->executed();
+}
+
+void Form::executed() const
+{
+	std::cout << "this Form has no execution" << std::endl;
 }
 
 Form::~Form()

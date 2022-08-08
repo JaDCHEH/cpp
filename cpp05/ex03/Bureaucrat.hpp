@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 17:39:42 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:02:23 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public:
 	~Bureaucrat();
 	int getGrade();
 	void incrementGrade();
-	bool SignForm(int Signgrade);
+	void SignForm(int Signgrade, std::string name, bool &status);
 	void decrementGrade();
 	const std::string &getName();
 };

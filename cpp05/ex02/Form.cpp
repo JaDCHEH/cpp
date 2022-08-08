@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/07 13:39:56 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:01:52 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,10 @@ int Form::getSigngrade()
 }
 void Form::beSigned(Bureaucrat &bureau)
 {
-	if (this->status == 0)
-	{
-		if (bureau.SignForm(this->getSigngrade()))
-		{
-			std::cout << bureau.getName() << " signed " << this->getName() << std::endl;
-			this->status = 1;
-		}
-		else
-		 std::cout << bureau.getName() << " couldn't sign " << this->getName() << " because Form grade is too high" << std::endl;
-	}
+	if (this->getSigngrade() < bureau.getGrade())
+		throw Form::GradeTooLowException();
 	else
-		std::cout << bureau.getName() << " couldn't sign " << this->getName() << " because Form is already signed" << std::endl;
+		bureau.SignForm(this->grade_requiredsign, this->name, this->status);
 }
 
 void Form::execute(Bureaucrat & executor)

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:58:28 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:50:14 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:53:33 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,6 @@ int main()
 	bureau.SignForm(form2);
 	bureau.executeForm(form);
 	bureau.executeForm(form0);
-	bureau.executeForm(form1);
-	bureau.executeForm(form1);
-	bureau.executeForm(form1);
-	bureau.executeForm(form1);
-	bureau.executeForm(form1);
-	bureau.executeForm(form1);
 	bureau.executeForm(form1);
 	bureau.executeForm(form2);
 }

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:15:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/10 14:45:59 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 15:33:44 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <iostream>
 #include <fstream>
 
-void rep(char *filename, std::string str_find, std::string str_rep)
+void rep(std::string filename, std::string str_find, std::string str_rep)
 {
 	std::ifstream ifs(filename);
-	std::ofstream ofs(strcat(filename , ".replace"));
+	std::ofstream ofs(filename + ".replace");
 	std::string	file;
 	std::string temp;
 	std::string finalstring;
@@ -33,7 +33,7 @@ void rep(char *filename, std::string str_find, std::string str_rep)
 			temp += str_rep;
 			temp += file.substr(find + str_find.length());
 			file = temp;
-			finalstring += temp;
+			finalstring = temp;
 			find = file.find(str_find, 0);
 		}
 		ofs << finalstring;

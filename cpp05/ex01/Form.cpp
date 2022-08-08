@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:01:41 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:25:37 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void Form::beSigned(Bureaucrat &bureau)
 	if (this->getSigngrade() < bureau.getGrade())
 		throw Form::GradeTooLowException();
 	else
-		bureau.SignForm(this->grade_requiredsign, this->name, this->status);
+		this->status = 1;
 }
 
 Form::~Form()

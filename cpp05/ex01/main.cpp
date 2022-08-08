@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:58:28 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/21 16:03:54 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:24:37 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ int main()
 	std::cout << bureau << std::endl;
 	std::cout << form << std::endl;
 	std::cout << form2 << std::endl;
-	form.beSigned(bureau);
+	bureau.SignForm(form);
 	std::cout << form << std::endl;
-	form2.beSigned(bureau);
+	bureau.SignForm(form2);
 	std::cout << form2 << std::endl;
-	form.beSigned(bureau);
 }

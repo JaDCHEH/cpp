@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:37:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:03:08 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:47:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ Bureaucrat::Bureaucrat(std::string name, int Grade) : Name(name)
 	}
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return this->Grade;
 }
 
-const std::string &Bureaucrat::getName()
+const std::string &Bureaucrat::getName() const
 {
 	return this->Name;
 }
@@ -62,20 +62,37 @@ void Bureaucrat::decrementGrade()
 	}
 }
 
-void Bureaucrat::SignForm(int signgrade, std::string name, bool &status)
+void Bureaucrat::SignForm(Form &form)
 {
-	if (status == 0)
-	{
-		if (this->Grade < signgrade)
-		{
-			std::cout << this->getName() << " signed " << this->getName() << std::endl;
-			status == 1;
-		}
-		else
-			std::cout << this->getName() << " couldn't sign " << this->getName() << " because Form grade is too high" << std::endl;
-	}
+	if (form.getStatus() == 1)
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because Form is already signed" << std::endl;
+
 	else
-		std::cout << this->getName() << " couldn't sign " << this->getName() << " because Form is already signed" << std::endl;
+	{
+		try
+		{
+			form.beSigned(*this);
+			std::cout << this->getName() << " signed " << form.getName() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		}
+	}
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+		form.executed();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat &bureau)

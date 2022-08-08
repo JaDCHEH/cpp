@@ -6,13 +6,16 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 17:40:20 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:19:08 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 # include "Bureaucrat.hpp"
+
+class Form;
+class Bureaucrat;
 
 class Form
 {

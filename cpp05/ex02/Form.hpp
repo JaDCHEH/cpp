@@ -6,13 +6,16 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/07 13:39:16 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:42:20 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 # include "Bureaucrat.hpp"
+
+class Form;
+class Bureaucrat;
 
 class Form
 {
@@ -44,11 +47,11 @@ public:
 		}
 	};
 	Form(std::string name, int signgrade, int execgrade);
-	const std::string &getName();
-	bool getStatus();
-	int getExecgrade();
-	int getSigngrade();
-	void execute(Bureaucrat & executor);
+	const std::string &getName() const;
+	bool getStatus() const;
+	int getExecgrade() const;
+	int getSigngrade() const;
+	void execute(Bureaucrat const & executor) const;
 	virtual void executed() const;
 	void beSigned(Bureaucrat &bureau);
 	~Form();

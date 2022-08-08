@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:02:01 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:48:00 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,41 +32,40 @@ std::ostream& operator<<(std::ostream& os, Form &Form)
 	return os;
 }
 
-const std::string &Form::getName()
+const std::string &Form::getName() const
 {
 	return this->name;
 }
 
-bool Form::getStatus()
+bool Form::getStatus() const
 {
 	return this->status;
 }
 
-int Form::getExecgrade()
+int Form::getExecgrade() const
 {
 	return this->grade_requiredexec;
 }
 
-int Form::getSigngrade()
+int Form::getSigngrade() const
 {
 	return this->grade_requiredsign;
 }
+
 void Form::beSigned(Bureaucrat &bureau)
 {
 	if (this->getSigngrade() < bureau.getGrade())
 		throw Form::GradeTooLowException();
 	else
-		bureau.SignForm(this->grade_requiredsign, this->name, this->status);
+		this->status = 1;
 }
 
-void Form::execute(Bureaucrat & executor)
+void Form::execute(Bureaucrat const & executor) const
 {
 	if(this->status == 0)
 		throw Form::UnsignedException();
 	else if (executor.getGrade() > this->getExecgrade())
 		throw Bureaucrat::GradeTooLowException();
-	else
-		this->executed();
 }
 
 void Form::executed() const

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:01:11 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 14:38:21 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 # include <string>
 # include <iostream>
 # include <stdexcept>
+# include "Form.hpp"
+
+class Form;
+class Bureaucrat;
 
 class Bureaucrat
 {
@@ -40,7 +44,7 @@ public:
 	~Bureaucrat();
 	int getGrade();
 	void incrementGrade();
-	void SignForm(int Signgrade, std::string name, bool &status);
+	void SignForm(Form &form);
 	void decrementGrade();
 	const std::string &getName();
 };

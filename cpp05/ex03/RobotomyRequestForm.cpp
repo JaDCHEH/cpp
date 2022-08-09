@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:37:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/31 10:50:01 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/09 14:51:02 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,25 @@ RobotomyRequestForm::RobotomyRequestForm(std::string Target) : Form("RobotomyReq
 	this->Target = Target;	
 }
 
-void RobotomyRequestForm::executed() const
+RobotomyRequestForm::RobotomyRequestForm(): Form(){
+	
+}
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm & copy): Form(copy){
+	this->Target = copy.Target;
+}
+
+RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm &copy){
+	this->Target = copy.Target;
+	return *this;
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	if(this->getStatus() == 0)
+		throw Form::UnsignedException();
+	else if (executor.getGrade() > this->getExecgrade())
+		throw Bureaucrat::GradeTooLowException();
 	srand(time(NULL));
 	if (rand() % 2)
 		std::cout << this->Target << " has been robotomized successfully." << std::endl;

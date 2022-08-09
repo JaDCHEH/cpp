@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:37:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/09 14:38:30 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/09 14:40:56 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat & copy)
 	this->Grade = copy.Grade;
 	return *this;
 }
-
 
 int Bureaucrat::getGrade() const
 {
@@ -104,7 +103,6 @@ void Bureaucrat::executeForm(Form const & form)
 	{
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
-		form.executed();
 	}
 	catch(const std::exception& e)
 	{

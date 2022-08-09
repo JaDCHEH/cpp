@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:37:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 20:02:35 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/09 14:51:02 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@
 RobotomyRequestForm::RobotomyRequestForm(std::string Target) : Form("RobotomyRequestForm", 72, 45)
 {
 	this->Target = Target;	
+}
+
+RobotomyRequestForm::RobotomyRequestForm(): Form(){
+	
+}
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm & copy): Form(copy){
+	this->Target = copy.Target;
+}
+
+RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm &copy){
+	this->Target = copy.Target;
+	return *this;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const

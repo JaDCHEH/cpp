@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:37:38 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 20:00:26 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/09 14:51:26 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ private:
 	std::string Target;
 public:
 	ShrubberyCreationForm(std::string Target);
+	ShrubberyCreationForm();
+	ShrubberyCreationForm(ShrubberyCreationForm & copy);
+	ShrubberyCreationForm & operator=(ShrubberyCreationForm &copy);
 	void execute(Bureaucrat const & executor) const;
 	~ShrubberyCreationForm();
 };

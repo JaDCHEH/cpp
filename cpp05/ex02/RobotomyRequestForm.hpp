@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:37:31 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/23 12:03:10 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/08 20:00:21 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ private:
 	std::string Target;
 public:
 	RobotomyRequestForm(std::string name);
-	void executed() const;
+	void execute(Bureaucrat const & executor) const;
 	~RobotomyRequestForm();
 };
 

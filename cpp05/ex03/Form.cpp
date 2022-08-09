@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:48:00 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/09 14:46:16 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@ Form::Form(std::string name, int signgrade, int execgrade) : name(name) , grade_
 	}
 	else
 		this->status = 0;
+}
+
+Form::Form(): name("noname") , grade_requiredsign(1), grade_requiredexec (1){
+	
+}
+
+Form::Form(Form & copy): name(copy.name) , grade_requiredsign(copy.grade_requiredsign), grade_requiredexec (copy.grade_requiredexec){
+	
+}
+
+Form & Form::operator=(Form &copy){
+	std::cout << "Copy operator can't do anything" << std::endl;
+	return *this;
 }
 
 std::ostream& operator<<(std::ostream& os, Form &Form)
@@ -66,11 +79,6 @@ void Form::execute(Bureaucrat const & executor) const
 		throw Form::UnsignedException();
 	else if (executor.getGrade() > this->getExecgrade())
 		throw Bureaucrat::GradeTooLowException();
-}
-
-void Form::executed() const
-{
-	std::cout << "this Form has no execution" << std::endl;
 }
 
 Form::~Form()

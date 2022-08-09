@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:37:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:26:08 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/09 14:38:19 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,22 @@ Bureaucrat::Bureaucrat(std::string name, int Grade) : Name(name)
 	{
 		this->Grade = Grade;
 	}
+}
+
+Bureaucrat::Bureaucrat()
+{
+	
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat & copy) : Name(copy.Name)
+{
+	this->Grade = copy.Grade;
+}
+
+Bureaucrat &Bureaucrat::operator=(Bureaucrat & copy)
+{
+	this->Grade = copy.Grade;
+	return *this;
 }
 
 int Bureaucrat::getGrade()

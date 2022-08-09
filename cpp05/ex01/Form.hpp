@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 14:19:08 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/09 14:42:55 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ public:
 		}
 	};
 	Form(std::string name, int signgrade, int execgrade);
+	Form();
+	Form(Form & copy);
+	Form & operator=(Form &copy);
 	const std::string &getName();
 	bool getStatus();
 	int getExecgrade();

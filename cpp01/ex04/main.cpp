@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:15:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/08 15:33:44 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/29 14:43:33 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 void rep(std::string filename, std::string str_find, std::string str_rep)
 {
 	std::ifstream ifs(filename);
+	if (!ifs)
+	{
+		std::cout << "This file doesn't exist!" << std::endl;
+		exit(0);
+	}
 	std::ofstream ofs(filename + ".replace");
 	std::string	file;
 	std::string temp;

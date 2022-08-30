@@ -6,13 +6,13 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:57:18 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/06 10:57:02 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/30 15:52:45 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-std::string const Weapon::get_type(void)
+std::string const &Weapon::get_type(void)
 {
 	return (this->type);
 }

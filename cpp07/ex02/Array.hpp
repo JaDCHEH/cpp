@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:57:23 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/28 12:35:07 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/30 15:44:53 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ private:
 	unsigned int _size;
 public:
 	Array() : array(new T[0]()), _size(0) {};
+	
 	Array(unsigned int n) : array(new T[n]()) , _size(n) {};
-	Array(Array &copy)
+	
+	Array(Array const &copy)
 	{
 		unsigned int i = 0;
 		this->array = new T[copy._size];
@@ -49,11 +51,10 @@ public:
 		}
 		return(this);
 	};
+
 	class Access : public std::exception
 	{
 	public:
-		Access()
-		{};
 		virtual const char *what() const throw ()
 		{
 			return ("Index is out of bonds\n");
@@ -66,9 +67,7 @@ public:
 			throw Access();
 		return (this->array[i]);
 	}
-	
 
-	
 	unsigned int size()
 	{
 		return (this->_size);

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:49:44 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/06 10:54:39 by cjad             ###   ########.fr       */
+/*   Updated: 2022/08/30 15:52:42 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Weapon
 {
 public:
-	std::string const get_type(void);
+	std::string const &get_type(void);
 	void setType(std::string const &type);
 	Weapon(std::string const &type);
 	Weapon();

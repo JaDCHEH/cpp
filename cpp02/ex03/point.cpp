@@ -6,40 +6,41 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:21:57 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/30 20:07:03 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/09 11:23:28 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "point.hpp"
+#include "Point.hpp"
 
-point::point() : a(0), b(0)
+Point::Point() : a(0), b(0)
 {
 }
 
-point::point(const float i, const float j) : a(i), b(j)
+Point::Point(const float i, const float j) : a(i), b(j)
 {
 }
 
-point::point(const point &point) : a(point.a), b(point.b)
+Point::Point(const Point &Point) : a(Point.a), b(Point.b)
 {
 }
 
-void point::operator=(const point &point)
+void Point::operator=(const Point &Point)
 {
-	(void) point;
+	(void) P
+oint;
 }
 
-Fixed point::Geta() const
+Fixed Point::Geta() const
 {
 	return this->a;
 }
 
-Fixed point::Getb() const
+Fixed Point::Getb() const
 {
 	return this->b;
 }
 
-Fixed point::Tarea(const point &a, const point &b) const
+Fixed Point::Tarea(const Point &a, const Point &b) const
 {
 	Fixed x(0.5f);
 	Fixed area (x * (this->Geta() * (a.Getb() - b.Getb()) + a.Geta() * (b.Getb()-this->Getb()) + b.Geta() * (this->Getb() - a.Getb())));
@@ -48,7 +49,7 @@ Fixed point::Tarea(const point &a, const point &b) const
 	return area;
 }
 
-point::~point()
+Point::~Point()
 {
 	
 }

@@ -27,7 +27,7 @@ void HumanB::setWeapon (Weapon &weapon)
 
 void HumanB::attack (void)
 {
-	if (this->weapon->get_type().empty())
+	if (!this->weapon)
 	{
 		std::cout << this->name << " is unable to attack" << std::endl;
 		return ;

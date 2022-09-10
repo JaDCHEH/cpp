@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:21:57 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:28 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/09 12:53:27 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ Point::Point(const Point &Point) : a(Point.a), b(Point.b)
 
 void Point::operator=(const Point &Point)
 {
-	(void) P
-oint;
+	(void) Point;
 }
 
 Fixed Point::Geta() const

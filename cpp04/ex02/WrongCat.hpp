@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bsp.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 12:28:19 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/09 12:53:04 by cjad             ###   ########.fr       */
+/*   Created: 2022/09/10 19:01:27 by cjad              #+#    #+#             */
+/*   Updated: 2022/09/10 19:01:28 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const Point)
-{
-	if (a.Tarea(b, c) == Point.Tarea(a , b) + Point.Tarea(a , c) + Point.Tarea(c , b))
-		return 1;
-	return 0;
-}
+#include "WrongAnimal.hpp"
+
+class WrongCat: public WrongAnimal{ 
+    public:
+        WrongCat( void );
+		~WrongCat( void );
+		WrongCat(WrongCat const & _p1);
+		WrongCat & operator = (WrongCat const & _p1);
+		void makeSound( void ) const;
+};
+#endif

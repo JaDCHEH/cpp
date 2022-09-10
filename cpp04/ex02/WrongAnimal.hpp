@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bsp.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 12:28:19 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/09 12:53:04 by cjad             ###   ########.fr       */
+/*   Created: 2022/09/10 19:01:12 by cjad              #+#    #+#             */
+/*   Updated: 2022/09/10 19:01:14 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
+#include <iostream>
+#include <string.h>
 
-bool bsp( Point const a, Point const b, Point const c, Point const Point)
-{
-	if (a.Tarea(b, c) == Point.Tarea(a , b) + Point.Tarea(a , c) + Point.Tarea(c , b))
-		return 1;
-	return 0;
-}
+class WrongAnimal{
+	protected :
+		std::string type;
+	public :
+		WrongAnimal( void );
+		~WrongAnimal( void );
+		WrongAnimal(WrongAnimal const & _p1);
+		WrongAnimal & operator = (WrongAnimal const & _p1);
+		std::string getType( void ) const;
+		virtual void makeSound( void ) const;
+};
+
+#endif //WRONGANIMAL_HPP

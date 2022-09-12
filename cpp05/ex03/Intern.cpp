@@ -16,6 +16,15 @@ Intern::Intern()
 {
 }
 
+Intern::Intern(const Intern &copy)
+{
+
+}
+Intern &Intern::operator=(const Intern &copy)
+{
+
+}
+
 Form *Intern::ShrubberyForm(std::string Target)
 {
 	return new ShrubberyCreationForm(Target);

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:01:21 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/10 19:01:22 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:21:21 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ WrongCat::~WrongCat( void ){
     std::cout << "WrongCat Destructor Called !" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const & _p1){
-    this->type = _p1.type;
+WrongCat::WrongCat(WrongCat const &copy){
+    this->type =copy.type;
 }
 
-WrongCat & WrongCat::operator = (WrongCat const & _p1){
-    this->type = _p1.type;
+WrongCat & WrongCat::operator = (WrongCat const &copy){
+    this->type =copy.type;
     return (*this);
 }
 

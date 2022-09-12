@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:00:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/07 15:23:06 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:13:58 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ private:
 	Brain* CatBrain;
 public:
 	Cat();
-	Cat(Cat &copy);
-	Cat &operator=(Cat &copy);
+	Cat(const Cat &copy);
+	Cat &operator=(const Cat &copy);
 	void makeSound() const;
 	~Cat();
 };

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:01:12 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/10 19:01:14 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:22:18 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class WrongAnimal{
 	public :
 		WrongAnimal( void );
 		~WrongAnimal( void );
-		WrongAnimal(WrongAnimal const & _p1);
-		WrongAnimal & operator = (WrongAnimal const & _p1);
+		WrongAnimal(const WrongAnimal &copy);
+		WrongAnimal & operator = (const WrongAnimal &copy);
 		std::string getType( void ) const;
 		virtual void makeSound( void ) const;
 };

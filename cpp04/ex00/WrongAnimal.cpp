@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:01:02 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/10 19:01:07 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:22:43 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ WrongAnimal::~WrongAnimal( void ){
 	std::cout << "WrongAnimal Destructor Called !" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const & _p1){
-	this->type = _p1.type;
+WrongAnimal::WrongAnimal(const WrongAnimal &copy){
+	this->type =copy.type;
 }
 
-WrongAnimal & WrongAnimal::operator = (WrongAnimal const & _p1){
-	this->type = _p1.type;
+WrongAnimal & WrongAnimal::operator = (const WrongAnimal &copy){
+	this->type =copy.type;
 	return (*this);
 }
 

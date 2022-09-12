@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:19:21 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/10 18:17:36 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:29:35 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void ClapTrap::attack(const std::string& target)
 {
 	if(this->energy > 0 && this->hitpoint > 0)
 	{
-	std::cout << "Clap Trap " << this->name << " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl; 
+		this->energy--;
+		std::cout << "Clap Trap " << this->name << " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl; 
 	}
 	else
 		std::cout << "Clap Trap " << this->name << "is out of energy or hp" << std::endl;

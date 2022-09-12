@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brain.cpp                                          :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:24:54 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/02 15:38:36 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:13:40 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@ Brain::Brain()
 {
 	std::cout << "Brain constructed" << std::endl;
 }
+
+Brain::Brain(const Brain &copy)
+{
+	*this = copy;
+}
+
+Brain &Brain::operator=(const Brain &copy)
+{
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = copy.ideas[i];
+	return *this;
+}
+
 
 Brain::~Brain()
 {

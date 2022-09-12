@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:35 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/07 15:20:53 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:20:44 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ Dog::Dog()
 	this->type = "Dog";
 }
 
-Dog::Dog(Dog &copy)
+Dog::Dog(const Dog &copy)
 {
-	
+	*this = copy;
 }
 
-Dog &Dog::operator=(Dog &copy)
+Dog &Dog::operator=(const Dog &copy)
 {
+	this->type = copy.type;
+	return *this;
 }
 
 void Dog::makeSound() const

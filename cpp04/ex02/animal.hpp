@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animal.hpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:58:31 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/02 15:43:10 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:27:34 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ protected:
 	std::string type;
 public:
 	Animal();
+	Animal(Animal &copy);
+	Animal &operator= (Animal & copy);
 	std::string getType() const;
 	virtual void makeSound() const = 0;
 	virtual ~Animal();

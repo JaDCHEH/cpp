@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/07 15:20:31 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:20:07 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ Cat::Cat()
 	this->type = "Cat";
 }
 
-Cat::Cat(Cat &copy)
+Cat::Cat(const Cat &copy)
 {
-	
+	*this = copy;
 }
 
-Cat &Cat::operator=(Cat &copy)
+Cat &Cat::operator=(const Cat &copy)
 {
+	this->type = copy.type;
+	return *this;
 }
 
 

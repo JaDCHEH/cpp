@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:01:27 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/10 19:01:28 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:21:52 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class WrongCat: public WrongAnimal{
     public:
         WrongCat( void );
 		~WrongCat( void );
-		WrongCat(WrongCat const & _p1);
-		WrongCat & operator = (WrongCat const & _p1);
+		WrongCat(const WrongCat &copy);
+		WrongCat & operator = (const WrongCat &copy);
 		void makeSound( void ) const;
 };
 #endif

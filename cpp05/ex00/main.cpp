@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:58:28 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 17:37:53 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 12:29:03 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int main()
 	Bureaucrat bureau("Jad", 1);
 	try
 	{
-		Bureaucrat bureau2("yal3ab", 0);
+		Bureaucrat bureau2("yal3ab", 150);
+		bureau2.decrementGrade();
 	}
 	catch(const std::exception& e)
 	{

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/09 14:45:51 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 15:40:38 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ Form::Form(): name("noname") , grade_requiredsign(1), grade_requiredexec (1){
 }
 
 Form::Form(Form & copy): name(copy.name) , grade_requiredsign(copy.grade_requiredsign), grade_requiredexec (copy.grade_requiredexec){
-	
+	this->status = copy.status;
 }
 
 Form & Form::operator=(Form &copy){
+	(void)copy;
 	std::cout << "Copy operator can't do anything" << std::endl;
 	return *this;
 }

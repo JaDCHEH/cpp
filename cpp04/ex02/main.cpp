@@ -6,18 +6,31 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:05:29 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/11 16:16:47 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 16:28:01 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 int main()
 {
+	// Animal a; should not be able to initiate
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	delete j;
+	delete j;//should not create a leak
 	delete i;
-	return 0;
+	Animal *animal[10];
+	
+	for(int i = 0; i < 5; i++)
+	    animal[i] = new Dog();
+
+	for(int i = 5; i < 10; i++)
+	    animal[i] = new Cat();
+
+	for (int i = 0; i < 10; i++)
+	{
+	    std::cout << animal[i]->getType() << std::endl;
+	}
 }

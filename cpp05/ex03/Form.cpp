@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 15:40:44 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 18:52:57 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,19 @@ std::ostream& operator<<(std::ostream& os, Form &Form)
 	os << "Form " << Form.getName() << " status " << Form.getStatus() << " Grade required to sign " << Form.getSigngrade() << " Grade required to execute " << Form.getExecgrade(); 
 	return os;
 }
+
+const char *Form::GradeTooHighException::what() const throw(){
+	return "This Grade is too high";
+}
+
+const char *Form::GradeTooLowException::what() const throw(){
+	return "This Grade is too high";
+}
+
+const char *Form::UnsignedException::what()const throw(){
+	return "this form is unsigned";
+}
+
 
 const std::string &Form::getName() const
 {

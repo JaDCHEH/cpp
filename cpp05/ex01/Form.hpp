@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 17:21:01 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 18:48:06 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw(){
-			return "Grade is too high";
-		}
+		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw(){
-			return "Grade is too Low";
-		}
+		virtual const char *what() const throw();
 	};
 	Form(std::string name, int signgrade, int execgrade);
 	Form();

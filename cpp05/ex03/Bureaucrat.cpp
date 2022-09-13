@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:37:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/09 14:40:56 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 18:53:33 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,15 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat & copy)
 	this->Grade = copy.Grade;
 	return *this;
 }
+
+const char *Bureaucrat::GradeTooHighException::what() const throw(){
+	return "This Grade is too high";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw(){
+	return "This Grade is too high";
+}
+
 
 int Bureaucrat::getGrade() const
 {

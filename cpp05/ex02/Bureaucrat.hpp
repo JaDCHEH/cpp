@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 12:41:40 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 18:50:29 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw(){
-			return "This Grade is too high";
-		}
+		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw(){
-			return "This Grade is too Low";
-		}
+		virtual const char *what() const throw();
 	};
 	Bureaucrat(std::string name, int Grade);
 	~Bureaucrat();

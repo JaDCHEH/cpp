@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:58:31 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/07 15:16:56 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 16:35:27 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Animal &operator= (Animal & copy);
 	std::string getType() const;
 	virtual void makeSound() const;
-	~Animal();
+	virtual ~Animal();
 };
 
 

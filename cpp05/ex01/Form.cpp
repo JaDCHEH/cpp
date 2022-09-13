@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 17:20:37 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 18:52:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,14 @@ std::ostream& operator<<(std::ostream& os, Form &Form)
 const std::string &Form::getName() const
 {
 	return this->name;
+}
+
+const char *Form::GradeTooHighException::what() const throw(){
+	return "This Grade is too high";
+}
+
+const char *Form::GradeTooLowException::what() const throw(){
+	return "This Grade is too high";
 }
 
 bool Form::getStatus() const

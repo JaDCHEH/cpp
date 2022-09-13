@@ -8,6 +8,8 @@ CPP_FILES = main.cpp \
 			Animal.cpp \
 			Dog.cpp \
 			Cat.cpp \
+			WrongAnilam.cpp \
+			WrongCat.cpp 
 
 all : $(NAME)
 

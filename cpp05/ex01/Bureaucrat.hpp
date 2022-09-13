@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 12:41:16 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 17:18:53 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ public:
 	Bureaucrat();
 	Bureaucrat(Bureaucrat & copy);
 	Bureaucrat &operator=(Bureaucrat & copy);
-	int getGrade();
+	int getGrade() const;
 	void incrementGrade();
 	void SignForm(Form &form);
 	void decrementGrade();
-	const std::string &getName();
+	const std::string &getName() const;
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat &bureau);

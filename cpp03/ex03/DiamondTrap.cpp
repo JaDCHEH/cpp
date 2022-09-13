@@ -6,15 +6,15 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:21:50 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 18:48:12 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:28:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string const &name)
 {
-	std::cout << "Diamond constructor called" << std::endl;
+	std::cout << "DiamondTrap" << this->name << "Constructor called" << std::endl;
 	this->name = name;
 	this->ClapTrap::name = name + "_name_clap";
 	this->hitpoint = this->FragTrap::initialhitpoint;
@@ -64,5 +64,5 @@ void DiamondTrap::whoiam()
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "Diamond destructor called" << std::endl;
+	std::cout << "Diamond "<< this->name <<" destructor called" << std::endl;
 }

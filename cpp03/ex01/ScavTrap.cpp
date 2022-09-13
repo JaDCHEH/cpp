@@ -6,14 +6,14 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:12:23 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 15:28:51 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:26:24 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap " << this->name << " constructor Called" << std::endl;
 	this->ad = 20;
@@ -29,7 +29,7 @@ void ScavTrap::attack(const std::string& target)
 		std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl; 
 	}
 	else
-		std::cout << "Clap Trap " << this->name << "is out of energy or hp" << std::endl;
+		std::cout << "ScavTrap " << this->name << " is out of energy or hp" << std::endl;
 }
 
 ScavTrap::ScavTrap()
@@ -66,5 +66,11 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+	if(this->energy > 0 && this->hitpoint > 0)
+	{
+		this->energy--;
+		std::cout << "ScavTrap"<< this->name <<"is now in Gate keeper mode" << std::endl;
+	}
+	else
+		std::cout << "ScavTrap " << this->name << " is out of energy or hp" << std::endl;
 }

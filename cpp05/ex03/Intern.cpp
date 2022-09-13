@@ -18,11 +18,12 @@ Intern::Intern()
 
 Intern::Intern(const Intern &copy)
 {
-
+	(void)copy;
 }
 Intern &Intern::operator=(const Intern &copy)
 {
-
+	(void)copy;
+	return *this;
 }
 
 Form *Intern::ShrubberyForm(std::string Target)

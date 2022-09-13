@@ -6,15 +6,15 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:07:58 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 18:45:24 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:28:19 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
 {
-	std::cout << "FragTrap Constructor called" << std::endl;
+	std::cout << "FragTrap" << this->name << "Constructor called" << std::endl;
 	this->ad = 30;
 	this->energy = 100;
 	this->hitpoint = 100;
@@ -47,10 +47,17 @@ FragTrap & FragTrap::operator=(const FragTrap &Frag)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << this->name << " requests 10 high fives" << std::endl;
+	if(this->energy > 0 && this->hitpoint > 0)
+	{
+		this->energy--;
+		std::cout << "FragTrap " << this->name << " requests 10 high fives" << std::endl;
+	}
+	else
+		std::cout << "FragTrap " << this->name << " is out of energy or hp" << std::endl;
+	
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap Destructor Called" << std::endl;
+	std::cout << "FragTrap "<< this->name <<" Destructor Called" << std::endl;
 }

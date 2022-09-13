@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:29:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 15:40:38 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 17:20:37 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,22 @@ std::ostream& operator<<(std::ostream& os, Form &Form)
 	return os;
 }
 
-const std::string &Form::getName()
+const std::string &Form::getName() const
 {
 	return this->name;
 }
 
-bool Form::getStatus()
+bool Form::getStatus() const
 {
 	return this->status;
 }
 
-int Form::getExecgrade()
+int Form::getExecgrade() const
 {
 	return this->grade_requiredexec;
 }
 
-int Form::getSigngrade()
+int Form::getSigngrade() const
 {
 	return this->grade_requiredsign;
 }

@@ -6,19 +6,19 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:19:21 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 15:29:35 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:28:32 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string const &name)
 {
 	this->name = name;
 	this->ad = 0;
 	this->energy = 10;
 	this->hitpoint = 10;
-	std::cout << "ClapTrap Constructor called" << std::endl;
+	std::cout << "ClapTrap " << this->name << " Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap()
@@ -51,16 +51,16 @@ void ClapTrap::attack(const std::string& target)
 	if(this->energy > 0 && this->hitpoint > 0)
 	{
 		this->energy--;
-		std::cout << "Clap Trap " << this->name << " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl; 
+		std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl; 
 	}
 	else
-		std::cout << "Clap Trap " << this->name << "is out of energy or hp" << std::endl;
+		std::cout << "ClapTrap " << this->name << " is out of energy or hp" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	this->hitpoint -= amount;
-	std::cout << "Clap Trap " << this->name << " took " << amount << " amount of damage!" << std::endl; 
+	std::cout << "ClapTrap " << this->name << " took " << amount << " amount of damage!" << std::endl; 
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -69,13 +69,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->energy--;
 		this->hitpoint += amount;
-		std::cout << "Clap Trap " << this->name << " Healed " << amount << " Hp!" << std::endl;
+		std::cout << "ClapTrap " << this->name << " Healed " << amount << " Hp!" << std::endl;
 	}
 	else
-		std::cout << "Clap Trap " << this->name << "is out of energy or hp " << std::endl;
+		std::cout << "ClapTrap " << this->name << " is out of energy or hp " << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap Destructor called" << std::endl;
+	std::cout << "ClapTrap "<< this->name <<" Destructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:30:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 12:34:40 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 17:17:59 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ public:
 	Bureaucrat(Bureaucrat & copy);
 	Bureaucrat &operator=(Bureaucrat & copy);
 	~Bureaucrat();
-	int getGrade();
+	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
-	const std::string &getName();
+	const std::string &getName() const;
 
 	class GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:58:39 by cjad              #+#    #+#             */
-/*   Updated: 2022/06/13 13:02:14 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:01:36 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int main()
 {
-	std::string str = "Garen";
-	ClapTrap clap(str);
+	ClapTrap clap("Garen");
 
 	clap.attack("Darius");
 	clap.takeDamage(5);

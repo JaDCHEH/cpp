@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:47:04 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 18:48:30 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:03:49 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	DiamondTrap();
 	DiamondTrap(const DiamondTrap &diam);
 	DiamondTrap & operator=(const DiamondTrap &diam);
-	DiamondTrap(std::string name);
+	DiamondTrap(std::string const &name);
 	void attack(const std::string &target);
 	void whoiam();
 	~DiamondTrap();

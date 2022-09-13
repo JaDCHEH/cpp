@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:04:13 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/06 18:45:43 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:03:06 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class ScavTrap : public ClapTrap
 {
 public:
 	ScavTrap();
-	ScavTrap(std::string name);
+	ScavTrap(std::string const &name);
 	ScavTrap(const ScavTrap &Scav);
 	ScavTrap & operator=(const ScavTrap &Scav);
 	void attack(const std::string &target);

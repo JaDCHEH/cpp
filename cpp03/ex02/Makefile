@@ -7,6 +7,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP_FILES = main.cpp \
 			ClapTrap.cpp \
 			ScavTrap.cpp \
+			FragTrap.cpp \
+
 
 all : $(NAME)
 

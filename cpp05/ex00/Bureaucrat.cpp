@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:37:52 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/09 14:38:03 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 17:21:08 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat & copy)
 }
 
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return this->Grade;
 }
 
-const std::string &Bureaucrat::getName()
+const std::string &Bureaucrat::getName() const
 {
 	return this->Name;
 }

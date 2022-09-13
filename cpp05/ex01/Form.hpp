@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:22:20 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 12:41:29 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/12 17:21:01 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ public:
 	Form();
 	Form(Form & copy);
 	Form & operator=(Form &copy);
-	const std::string &getName();
-	bool getStatus();
-	int getExecgrade();
-	int getSigngrade();
+	const std::string &getName() const;
+	bool getStatus() const;
+	int getExecgrade() const;
+	int getSigngrade() const;
 	void beSigned(Bureaucrat &bureau);
 	~Form();
 };

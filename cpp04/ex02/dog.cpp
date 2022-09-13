@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 19:02:35 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/12 15:25:03 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/13 13:31:09 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ Dog::Dog()
 
 Dog::Dog(const Dog &copy)
 {
-	*this= copy;
+	this->DogBrain = new Brain();
+	this->DogBrain = copy.DogBrain;
+	this->type = copy.type;
 }
 
 Dog &Dog::operator=(const Dog &copy)

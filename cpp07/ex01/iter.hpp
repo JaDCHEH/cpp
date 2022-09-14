@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:43:34 by cjad              #+#    #+#             */
-/*   Updated: 2022/07/26 11:51:01 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/14 18:56:56 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ template<typename T>
 void iter(T *array, int size, void (*func)(T &))
 {
 	int i = 0;
-	
+	if (!array)
+		return;
 	while (i < size)
 	{
 		func(array[i]);
@@ -29,7 +30,7 @@ void iter(T *array, int size, void (*func)(T &))
 template<typename T>
 void print(T &a)
 {
-	std::cout << a;
+	std::cout << a << ' ';
 }
 
 template<typename T>

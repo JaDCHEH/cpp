@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:57:23 by cjad              #+#    #+#             */
-/*   Updated: 2022/09/14 17:18:01 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/14 18:40:04 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ private:
 	T *array;
 	unsigned int _size;
 public:
-	Array() : array(nullptr), _size(1) {};
+	Array() : array(nullptr), _size(0) {};
 	
 	Array(unsigned int n) : array(new T[n]()) , _size(n) {};
 	

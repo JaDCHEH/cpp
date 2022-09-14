@@ -6,7 +6,7 @@
 /*   By: cjad <cjad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:57:23 by cjad              #+#    #+#             */
-/*   Updated: 2022/08/30 15:44:53 by cjad             ###   ########.fr       */
+/*   Updated: 2022/09/14 17:18:01 by cjad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ private:
 	T *array;
 	unsigned int _size;
 public:
-	Array() : array(new T[0]()), _size(0) {};
+	Array() : array(nullptr), _size(1) {};
 	
 	Array(unsigned int n) : array(new T[n]()) , _size(n) {};
 	
-	Array(Array const &copy)
+	Array(Array const &copy) : array(new T[copy._size]), _size(copy._size)
 	{
 		unsigned int i = 0;
-		this->array = new T[copy._size];
-		this->_size = copy._size;
 		while (i < copy._size)
 		{
 			this->array[i] = copy.array[i];
@@ -39,9 +37,8 @@ public:
 
 	Array &operator=(Array &assigned)
 	{
-		if (this == assigned)
-			return this;
-		int i = 0;
+		unsigned int i = 0;
+		delete [] this->array;
 		this->array = new T[assigned._size];
 		this->_size = assigned._size;
 		while (i < assigned._size)
@@ -49,7 +46,7 @@ public:
 			this->array[i] = assigned.array[i];
 			i++;
 		}
-		return(this);
+		return(*this);
 	};
 
 	class Access : public std::exception
@@ -57,7 +54,7 @@ public:
 	public:
 		virtual const char *what() const throw ()
 		{
-			return ("Index is out of bonds\n");
+			return ("Index is out of bonds");
 		};
 	};
 
@@ -74,7 +71,7 @@ public:
 	};
 	~Array()
 	{
-		delete this->array;
+		delete [] this->array;
 	};
 };
 

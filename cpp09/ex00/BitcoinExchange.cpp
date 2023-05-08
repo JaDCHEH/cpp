@@ -51,7 +51,7 @@ int BitcoinExchange::Is_date_correct(const std::string &date)
 	if (first_hyphen == std::string::npos || second_hyphen == std::string::npos
 	||  date.find_first_not_of("0123456789.-") != std::string::npos)
 	{
-		std::cerr << "Error: bad input :" << std::endl << line << std::endl;
+		std::cerr << "Error: bad input => " << date << std::endl;
 		return 0;
 	}
 	return 1;
@@ -111,9 +111,9 @@ int BitcoinExchange::Is_value_correct(const std::string& value)
 	||  value.at(0) == '.' || value.find('.', value.length() - 1) != std::string::npos)
 		std::cerr << "Error: Invalid value in database :" << std::endl << value << std::endl;
 	else if (value.at(0) == '-')
-		std::cerr << "Error: Negative number :" << std::endl;
+		std::cerr << "Error: not a positive number." << std::endl;
 	else if (value.length() > 10 || (value.length() == 10 && value > "2147483647"))
-		std::cerr << "Error: Out of Boundaries number :" << std::endl;
+		std::cerr << "Error: too large a number." << std::endl;
 	else
 		return 1;
 	return 0;

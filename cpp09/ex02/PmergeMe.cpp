@@ -103,7 +103,7 @@ void PmergeMe::sortVec(int argc, char **argv)
 	std::list<unsigned int>::const_iterator itr;
 	for (itr = lst.begin(); itr != lst.end(); itr++)
 		std::cout << *itr << " ";
-	std::cout << endl;
+	std::cout << std::endl;
 }
 
 static std::list<unsigned int> mergeLists(std::list<unsigned int>& left, std::list<unsigned int>& right)

@@ -15,8 +15,8 @@ class RPN {
 		RPN &operator=(const RPN &copy);
 		~RPN(void);
 
-		int valid_expression(const std::string& expr);
-		long long calculate(const std::string& expr);
+		static int valid_expression(const std::string& expr);
+		static long long calculate(const std::string& expr);
 
 		class MalFormatedARG : public std::exception {
 			public:

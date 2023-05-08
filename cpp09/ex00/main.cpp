@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
 	std::ifstream internal_db("./data.csv", std::ifstream::in);
 	if (!internal_db.is_open())
-		return exit_with_error("Error: could not open internal database file"R);
+		return exit_with_error("Error: could not open internal database file");
 
 	BitcoinExchange btc;
 	btc.readInternalDataBase(internal_db);
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		size_t limiter = line.find('|');
 		if (limiter == std::string::npos || line.length() < limiter + 2)
 		{
-			std::cerr << "Error: bad input :" << std::endl << line << std::endl;
+			std::cerr << "Error: bad input => " << line << std::endl;
 			continue ;
 		}
 		std::string date = line.substr(0, limiter - 1);

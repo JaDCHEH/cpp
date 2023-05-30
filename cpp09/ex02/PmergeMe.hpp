@@ -18,7 +18,7 @@ class PmergeMe {
 		PmergeMe &operator=(const PmergeMe& copy);
 		~PmergeMe(void);
 
-		void sortVec(int argc, char **argv);
+		void SortVector(int argc, char **argv);
 		void sortList(int argc, char **argv);
 
 		class InvalidElement : public std::exception {

@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	pmm.sortVec(argc, argv);
+	pmm.SortVector(argc, argv);
 	std::cout << std::endl;
 	pmm.sortList(argc, argv);
 

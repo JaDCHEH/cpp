@@ -67,6 +67,8 @@ long long RPN::calculate(const std::string& expr)
 		else
 			temp.push(ft_stoi(s));
 	}
+	if (temp.size() > 1)
+		throw MalFormatedARG();
 	return temp.top();
 }
 

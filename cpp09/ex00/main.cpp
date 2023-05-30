@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 		if (!btc.Is_value_correct(value_as_str))
 			continue;
 		float value = ft_stof(value_as_str);
-		std::cout << date << " => " << value << " = " << std::setprecision(2) << value * btc.getvalue(date) << std::endl;
+		std::cout << date << " => " << value << " = " << value * btc.getvalue(date) << std::endl;
 	}
 	input_db.close();
 	internal_db.close();

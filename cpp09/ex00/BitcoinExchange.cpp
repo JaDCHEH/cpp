@@ -107,12 +107,13 @@ int BitcoinExchange::Is_date_valid(const std::string& date)
 
 int BitcoinExchange::Is_value_correct(const std::string& value)
 {
+	float f = ft_stof(value);
 	if (value.empty() || value.find_first_not_of("0123456789.-") != std::string::npos
 	||  value.at(0) == '.' || value.find('.', value.length() - 1) != std::string::npos)
 		std::cerr << "Error: Invalid value in database :" << std::endl << value << std::endl;
 	else if (value.at(0) == '-')
 		std::cerr << "Error: not a positive number." << std::endl;
-	else if (value.length() > 10 || (value.length() == 10 && value > "2147483647"))
+	else if (f > 1000.f)
 		std::cerr << "Error: too large a number." << std::endl;
 	else
 		return 1;
